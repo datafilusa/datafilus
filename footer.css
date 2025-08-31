@@ -90,3 +90,18 @@ body {
     gap: 25px; /* spacing between Contact Us and icons */
   }
 }
+
+
+html, body {
+  height: 100%;          /* allow full height layout */
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  flex: 1;               /* content grows to fill space */
+}
+
+.footer {
+  margin-top: auto;      /* push footer to bottom when content is short */
+}
