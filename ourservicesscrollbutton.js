@@ -16,11 +16,20 @@ document.addEventListener('DOMContentLoaded', () => {
   // Adjust button and arrow size dynamically
   function adjustButtonAndArrow() {
     const width = window.innerWidth;
+
+    // Hide button on smaller screens
+    if (width <= 900) {
+      scrollBtn.style.display = 'none';
+      return;
+    } else {
+      scrollBtn.style.display = 'flex';
+    }
+
     let btnSize = 60;
     let arrowBorder = 12;
     const arrowColor = 'rgba(45, 45, 98, 0.9)';
 
-    if (width < 1500) { btnSize = 50; arrowBorder = 10; }
+    if (width < 1800) { btnSize = 50; arrowBorder = 10; }
     if (width < 1200) { btnSize = 45; arrowBorder = 9; }
     if (width < 900)  { btnSize = 40; arrowBorder = 8; }
     if (width < 600)  { btnSize = 35; arrowBorder = 7; }
@@ -55,13 +64,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Position scroll button relative to video section
   function positionScrollBtn() {
+    const width = window.innerWidth;
+
+    // Hide button on smaller screens
+    if (width <= 900) {
+      scrollBtn.style.display = 'none';
+      return;
+    } else {
+      scrollBtn.style.display = 'flex';
+    }
+
     const videoHeight = videoSection.offsetHeight;
     const btnHeight = scrollBtn.offsetHeight;
     let topPos = videoHeight * 0.8 - btnHeight / 2;
 
-    // Optional extra spacing for mid-sized screens
-    if (window.innerWidth >= 768 && window.innerWidth <= 1810) {
-      topPos -= 50; // same as extraSpacing
+    // Extra spacing for mid-to-large screens (768px–1800px)
+    if (width >= 768 && width <= 1810) {
+      topPos -= 50;
     }
 
     scrollBtn.style.position = 'absolute';
@@ -69,7 +88,7 @@ document.addEventListener('DOMContentLoaded', () => {
     scrollBtn.style.left = '50%';
     scrollBtn.style.transform = 'translateX(-50%)';
     scrollBtn.style.zIndex = '10';
-    scrollBtn.style.display = 'flex'; // always visible
+    scrollBtn.style.display = 'flex';
     scrollBtn.style.alignItems = 'center';
     scrollBtn.style.justifyContent = 'center';
   }
