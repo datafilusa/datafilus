@@ -12,14 +12,9 @@
   <link rel="stylesheet" href="portallogin.css" />
   <link rel="stylesheet" href="footer.css" />
   <link rel="stylesheet" href="fullgrade.css" />
-
-  <!-- Search & Highlight CSS (for overlay only, safe) -->
   <link rel="stylesheet" href="search-results.css" />
 
-  <!-- Search overlay JS -->
-
-
-  <!-- Portal JS -->
+  <!-- JS -->
   <script src="navjsforportal.js" defer></script>
   <script src="portalscript.js" defer></script>
 
@@ -27,20 +22,19 @@
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Merriweather:ital,wght@1,400&display=swap" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet" />
 
-  <!-- Open Graph -->
+  <!-- Meta -->
   <meta property="og:title" content="DataFil - Virtual Assistance Services" />
   <meta property="og:description" content="Connecting continents and building dreams." />
   <meta property="og:image" content="https://datafil-va.com/image/previewimage.png" />
   <meta property="og:url" content="https://datafil-va.com" />
   <meta property="og:type" content="website" />
 
-  <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="DataFil - Virtual Assistance Services" />
   <meta name="twitter:description" content="Connecting continents and building dreams." />
   <meta name="twitter:image" content="https://datafil-va.com/image/previewimage.png" />
 </head>
-
+<body>
 
   <!-- NAVBAR -->
   <header class="navbar">
@@ -62,8 +56,9 @@
       <div class="burger" id="burgerMenu">☰</div>
     </div>
   </header>
+
+  <!-- Search -->
   <div id="searchResultsContainer" style="display:none;"></div>
-  <!-- Full-screen search overlay -->
   <div id="searchOverlay" class="search-overlay">
     <div class="search-box">
       <input type="text" id="overlaySearchInput" placeholder="Type keywords to search..." />
@@ -84,7 +79,9 @@
         <div class="password-wrapper">
           <input type="password" id="password" placeholder="Password" />
           <span id="togglePassword">
-            <svg id="togglePasswordSvg" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <svg id="togglePasswordSvg" xmlns="http://www.w3.org/2000/svg" width="24" height="24" 
+              viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" 
+              stroke-linecap="round" stroke-linejoin="round">
               <path d="M12 5c-7 0-11 7-11 7s4 7 11 7 11-7 11-7-4-7-11-7z"/>
               <circle cx="12" cy="12" r="2.5"/>
             </svg>
@@ -112,11 +109,10 @@
       </div>
     </section>
 
-    <!-- Profile Page (hidden initially) -->
+    <!-- Profile Page -->
     <section class="profile-page" id="profilePage" style="display:none;">
       <h1>Student Portal</h1>
 
-      <!-- Profile Header -->
       <div class="profile-header">
         <div class="profile-picture">
           <img src="profile-placeholder.png" alt="Profile Picture" />
@@ -132,22 +128,16 @@
         <!-- Semester/Year Dropdown -->
         <div class="semester-selector">
           <label for="semesterDropdown">Semester:</label>
-          <select id="semesterDropdown">
-            <!-- Options will be populated dynamically -->
-          </select>
+          <select id="semesterDropdown"></select>
         </div>
       </div>
 
-      <!-- Dynamic Semester Info -->
-      <div id="semesterContainer">
-        <!-- JS will generate all semester sections here -->
-      </div>
-
+      <div id="semesterContainer"></div>
       <button id="logoutBtn">Logout</button>
     </section>
   </div>
 
-  <!-- Partnership Portal Logos -->
+  <!-- Partnership Logos -->
   <div class="branding-logos">
     <h3 class="partnership-title">
       <span class="text-blue">In</span>
@@ -163,31 +153,26 @@
       </a>
     </div>
   </div>
+
+  <!-- ✅ Footer must be inside body -->
+  <footer class="footer">
+    <div class="footer-top">
+      <span>&copy; 2025 DataFil.us All rights reserved</span>
+      <span class="privacypolicy">Privacy Policy</span>
+    </div>
+    <div class="footer-bottom">
+      <a href="contactus.html" class="footer-contact-btn">Contact Us</a>
+      <a href="https://www.facebook.com/DataFilUSA/" target="_blank">
+        <img src="image/fb-icon2.png" class="footer-icon" alt="Facebook">
+      </a>
+      <a href="https://www.instagram.com/datafilusa/" target="_blank">
+        <img src="image/ig-icon2.png" class="footer-icon" alt="Instagram">
+      </a>
+      <a href="https://twitter.com/DataFilUSA" target="_blank">
+        <img src="image/x-icon2.png" class="footer-icon" alt="Twitter">
+      </a>
+    </div>
+  </footer>
+
 </body>
-
-
-
-<div class="footer">
-  <div class="footer-top">
-    <span>&copy; 2025 DataFil.us All rights reserved</span>
-    <span class="privacypolicy">Privacy Policy</span>
-  </div>
-  <div class="footer-bottom">
-    <a href="contactus.html" class="footer-contact-btn">Contact Us</a>
-    <a href="https://www.facebook.com/DataFilUSA/" target="_blank">
-      <img src="image/fb-icon2.png" class="footer-icon" alt="Facebook">
-    </a>
-    <a href="https://www.instagram.com/datafilusa/" target="_blank">
-      <img src="image/ig-icon2.png" class="footer-icon" alt="Instagram">
-    </a>
-    <a href="https://twitter.com/DataFilUSA" target="_blank">
-      <img src="image/x-icon2.png" class="footer-icon" alt="Twitter">
-    </a>
-  </div>
-</div>
-
 </html>
-
-</html>
-
-
