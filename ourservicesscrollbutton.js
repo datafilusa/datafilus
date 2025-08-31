@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let topPos = videoHeight * 0.8 - btnHeight / 2;
 
     // Optional extra spacing for mid-sized screens
-    if (window.innerWidth >= 768 && window.innerWidth <= 1500) {
+    if (window.innerWidth >= 768 && window.innerWidth <= 1810) {
       topPos -= 50; // same as extraSpacing
     }
 
