@@ -246,6 +246,19 @@ body {
     left: auto;
     border-color: transparent transparent transparent rgba(45, 45, 98, 0.5);
   }
+
+@media (max-width: 750px) {
+  .service-card.faq-card .service-text h2 {
+    font-size: 28px; /* shrink the whole heading */
+    line-height: 1.2;
+    word-wrap: break-word;
+  }
+
+  .service-card.faq-card .service-text h2 .faq-yellow {
+    font-size: 0.9em; /* keeps (FAQ's) slightly smaller than the title */
+  }
+}
+  
 }
 
 /* ========================== */
