@@ -1,0 +1,99 @@
+/* ========================== */
+/* IMPORT FONT */
+/* ========================== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
+
+/* ========================== */
+/* BRANDING LOGOS SECTION */
+/* ========================== */
+.branding-logos {
+  display: flex;
+  flex-direction: column; /* stack title and logos */
+  align-items: center;
+  gap: 20px;
+  padding: 20px 0;
+  background-color: #f9f9f9;
+  margin-top: 50px;
+}
+
+.partnership-title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 28px; /* increased font size */
+  font-weight: 700;
+  text-align: center;
+  margin: 0;
+}
+
+.text-blue {
+  color: #2d2d62; /* "In" and "With" */
+}
+
+.text-yellow {
+  color: #E8D33A; /* "Partnership" */
+}
+
+.branding-logos .partner-logos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 80px; /* larger gap for desktop */
+}
+
+.branding-logos img {
+  object-fit: contain;
+}
+
+.branding-logos .partner-logos img {
+  height: 50px; /* default logo size */
+  transition: transform 0.3s ease;
+}
+
+
+
+.branding-logos .partner-logos img:hover {
+  transform: scale(1.1); /* subtle hover zoom */
+}
+
+/* ========================== */
+/* SPECIFIC LOGO SIZE INCREASE */
+/* ========================== */
+.branding-logos .partner-logos img[src="image/partner1.png"],
+.branding-logos .partner-logos img[src="image/geccportalimg.png"] {
+  height: 70px; /* larger logos */
+}
+
+
+.branding-logos .partner-logos a img {
+  cursor: pointer; /* show pointer on hover */
+}
+/* ========================== */
+/* RESPONSIVE ADJUSTMENTS */
+/* ========================== */
+@media (max-width: 700px) {
+  .branding-logos {
+    gap: 10px;         /* space between title and logos */
+    padding: 10px 0;
+  }
+
+  .partnership-title {
+    font-size: 22px;    /* smaller font on mobile */
+    text-align: center;
+  }
+
+  .partner-logos {
+    display: flex;
+    flex-direction: column; /* stack logos vertically */
+    gap: 4vh;               /* vertical spacing proportional to viewport */
+    align-items: center;
+  }
+
+  .partner-logos img {
+    height: 50px;          /* smaller logos on mobile */
+    margin: 0;             /* remove any custom margin */
+  }
+
+  /* Remove individual negative margin */
+  .partner-logos img[src="image/geccportalimg.png"] {
+    margin-top: 0;         /* no longer needed */
+  }
+}

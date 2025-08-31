@@ -1,0 +1,99 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #fff;
+  color: #2d2d62;
+  line-height: 1.6;
+}
+
+/* Services Container */
+.services-container {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* Each Service Card */
+.service-card {
+  display: flex;
+  flex-direction: row;
+  gap: 0; /* Remove gap so image touches card edges */
+  align-items: stretch;
+  background-color: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08); /* Soft modern shadow */
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+/* Image styling */
+.service-card img {
+  flex-shrink: 0;
+  width: 280px;
+  height: auto;
+  object-fit: cover;
+  object-position: top center; /* Keep important top content visible */
+}
+
+/* Text inside card */
+.service-text {
+  flex: 1;
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.service-text h2 {
+  margin-bottom: 10px;
+  font-size: 1.6rem;
+  color: #2d2d62;
+}
+
+.service-text p {
+  font-size: 1rem;
+  color: #333;
+  text-align: justify;
+}
+
+/* Responsive Layout for Tablets and Mobile */
+@media (max-width: 750px) {
+  .service-card {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .service-card img {
+    width: 100%;
+    height: 300px; /* Increased height for better visibility */
+    object-fit: cover;
+    object-position: top center; /* Keeps heads visible */
+  }
+
+  .service-text {
+    text-align: left;
+    padding: 20px;
+  }
+
+  .service-text h2 {
+    font-size: 1.4rem;
+  }
+
+  .service-text p {
+    text-align: left;
+  }
+}

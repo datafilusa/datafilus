@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DataFil - FAQ</title>
+
+  <!-- Existing CSS -->
+  <link rel="stylesheet" href="nav.css" />
+  <link rel="stylesheet" href="faqvid.css" />
+  <link rel="stylesheet" href="faq.css" />
+  <link rel="stylesheet" href="faqcontactform.css" />
+  <link rel="stylesheet" href="footer.css" />
+
+  <!-- Search & Highlight CSS -->
+  <link rel="stylesheet" href="search-results.css" />
+
+  <!-- JS Scripts -->
+  <script src="faqscrollbutton.js" defer></script>
+  <script src="search.js" defer></script>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Merriweather:ital,wght@1,400&display=swap" rel="stylesheet" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="DataFil - Virtual Assistance Services" />
+  <meta property="og:description" content="Connecting continents and building dreams." />
+  <meta property="og:image" content="https://datafil-va.com/image/previewimage.png" />
+  <meta property="og:url" content="https://datafil-va.com" />
+  <meta property="og:type" content="website" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="DataFil - Virtual Assistance Services" />
+  <meta name="twitter:description" content="Connecting continents and building dreams." />
+  <meta name="twitter:image" content="https://datafil-va.com/image/previewimage.png" />
+</head>
+
+
+<body>
+<!-- Navbar -->
+<header class="navbar">
+  <div class="logo">
+    <a href="index.html">
+      <img src="image/datafillogo.png" alt="DataFil Logo" />
+    </a>
+  </div>
+
+  <nav class="nav-buttons" id="navButtons">
+    <a href="index.html"  ><button>HOME</button></a>
+    <a href="aboutus.html"><button>ABOUT US</button></a>
+    <a href="ourservices.html"><button>OUR SERVICES</button></a>
+    <a href="portal.html"><button>PORTAL</button></a>
+    <a href="faq.html" class="active"><button>FAQ</button></a>
+    <a href="contactus.html"><button>CONTACT US</button></a>
+  </nav>
+
+  <!-- Right side: search + burger -->
+  <div class="navbar-right">
+    <button id="searchIcon" class="search-icon">
+      <img src="image/searchicon.png" alt="Search" />
+    </button>
+    <div class="burger" id="burgerMenu">☰</div>
+  </div>
+</header>
+<div id="searchResultsContainer" style="display:none;"></div>
+
+<!-- Full-screen search overlay -->
+<div id="searchOverlay" class="search-overlay">
+  <div class="search-box">
+    <input type="text" id="overlaySearchInput" placeholder="Type keywords to search..." />
+    <button id="overlaySearchButton">
+      <img src="image/searchicon3.png" alt="Search" />
+    </button>
+  </div>
+</div>
+
+<section class="video-section">
+  <video class="bg-video" autoplay muted loop playsinline>
+    <source src="image/faqvid.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <!-- Centered text overlay -->
+  <div class="video-overlay">
+  </div>
+
+  <!-- Buttons container (separate, sticks to bottom) -->
+  <div class="btn-container">
+    <a href="contactus.html" class="inquire-btn">Inquire Now</a>
+    <button class="scroll-down-btn" id="scrollDownBtn">
+      <span class="double-v"></span>
+    </button>
+  </div>
+</section>
+
+
+
+<section class="services-container">
+  <div class="service-card faq-card">
+    <div class="service-text">
+      <h2>Frequently Asked Questions <span class="faq-yellow">(FAQ's)</span></h2>
+  <!-- 1 -->
+<div class="faq-item">
+  <!-- Original FAQ -->
+  <button class="faq-question">1. Why should I study Medicine (MBBS) in the Philippines?</button>
+  <div class="faq-answer">
+    <p>
+      Studying Medicine (MBBS) in the Philippines offers affordable tuition payable in installments, a disease spectrum similar to Nepal and India for practical clinical training, and the language of instruction is in English. The Philippines is considered Asia’s largest English-speaking country and serves as a hub for international students, where thousands pursue their academic aspirations. It has produced the second-highest number of foreign doctors practicing in the USA. Comfortable hostels with Nepali and Indian food options are available.
+    </p>
+  </div>
+
+  <!-- Chat Bubble Mode (hidden by default) -->
+  <div class="faq-chat">
+    <div class="faq-question-container">
+      <img src="image/faqimgquestion.png" alt="Question Icon" class="faq-avatar left">
+      <p class="faq-question-bubble">1. Why should I study Medicine (MBBS) in the Philippines?</p>
+    </div>
+    <div class="faq-answer-container">
+      <p class="faq-answer-bubble">
+        Studying Medicine (MBBS) in the Philippines offers affordable tuition payable in installments, a disease spectrum similar to Nepal and India for practical clinical training, and the language of instruction is in English. The Philippines is considered Asia’s largest English-speaking country and serves as a hub for international students, where thousands pursue their academic aspirations. It has produced the second-highest number of foreign doctors practicing in the USA. Comfortable hostels with Nepali and Indian food options are available.
+      </p>
+      <img src="image/faqimganswer.png" alt="Answer Icon" class="faq-avatar right">
+    </div>
+  </div>
+</div>
+
+
+<div class="faq-item">
+  <!-- Original FAQ (always visible) -->
+  <button class="faq-question">2. What are the admission requirements for MBBS in the Philippines?</button>
+  <div class="faq-answer">
+    <p>
+      Nepali candidates must have passed the Common Entrance Exam (CEE) conducted by the Medical Education Commission (MEC), while Indian candidates must have cleared NEET. All applicants must have a valid passport and have completed their +2 or equivalent examination.
+    </p>
+  </div>
+
+  <!-- Chat Bubble Mode (hidden by default, shows when active) -->
+  <div class="faq-chat">
+    <div class="faq-question-container">
+      <img src="image/faqimgquestion.png" alt="Question Icon" class="faq-avatar left">
+      <p class="faq-question-bubble">2. What are the admission requirements for MBBS in the Philippines?</p>
+    </div>
+    <div class="faq-answer-container">
+      <p class="faq-answer-bubble">
+        Nepali candidates must have passed the Common Entrance Exam (CEE) conducted by the Medical Education Commission (MEC), while Indian candidates must have cleared NEET. All applicants must have a valid passport and have completed their +2 or equivalent examination.
+      </p>
+      <img src="image/faqimganswer.png" alt="Answer Icon" class="faq-avatar right">
+    </div>
+  </div>
+</div>
+
+
+<div class="faq-item">
+  <!-- Original FAQ -->
+  <button class="faq-question">3. If I have gap years after +2, am I still eligible to apply for the MBBS program?</button>
+  <div class="faq-answer">
+    <p>
+      Yes. Having gap years after completing your +2 does not affect your eligibility to apply for the MBBS program in the Philippines. You can still submit your application and meet the admission requirements.
+    </p>
+  </div>
+
+  <!-- Chat Bubble Mode (hidden by default) -->
+  <div class="faq-chat">
+    <div class="faq-question-container">
+      <img src="image/faqimgquestion.png" alt="Question Icon" class="faq-avatar left">
+      <p class="faq-question-bubble">3. If I have gap years after +2, am I still eligible to apply for the MBBS program?</p>
+    </div>
+    <div class="faq-answer-container">
+      <p class="faq-answer-bubble">
+        Yes. Having gap years after completing your +2 does not affect your eligibility to apply for the MBBS program in the Philippines. You can still submit your application and meet the admission requirements.
+      </p>
+      <img src="image/faqimganswer.png" alt="Answer Icon" class="faq-avatar right">
+    </div>
+  </div>
+</div>
+
+
+<!-- 4 -->
+<div class="faq-item">
+  <!-- Original FAQ -->
+  <button class="faq-question">4. What university is DataFil partnered with for MBBS?</button>
+  <div class="faq-answer">
+    <p>
+      DataFil is partnered with the 
+      <a href="https://perpetualdalta.edu.ph" target="_blank" class="faq-link">
+        <strong>University of Perpetual Help System DALTA (UPHSD)</strong>
+      </a> 
+      for MBBS. UPHSD is a well-established private university in the Philippines, recognized for its strong medical program and high-quality education. It is CHED-accredited (Commission on Higher Education, Philippines) and WFME-accredited (World Federation for Medical Education), ensuring its medical program meets international standards.
+    </p>
+  </div>
+
+  <!-- Chat Bubble Mode (hidden by default) -->
+  <div class="faq-chat">
+    <div class="faq-question-container">
+      <img src="image/faqimgquestion.png" alt="Question Icon" class="faq-avatar left">
+      <p class="faq-question-bubble">4. What university is DataFil partnered with for MBBS?</p>
+    </div>
+    <div class="faq-answer-container">
+      <p class="faq-answer-bubble">
+        DataFil is partnered with the 
+        <a href="https://perpetualdalta.edu.ph" target="_blank" class="faq-link">
+          <strong>University of Perpetual Help System DALTA (UPHSD)</strong>
+        </a> 
+        for MBBS. UPHSD is a well-established private university in the Philippines, recognized for its strong medical program and high-quality education. It is CHED-accredited (Commission on Higher Education, Philippines) and WFME-accredited (World Federation for Medical Education), ensuring its medical program meets international standards.
+      </p>
+      <img src="image/faqimganswer.png" alt="Answer Icon" class="faq-avatar right">
+    </div>
+  </div>
+</div>
+
+
+<!-- 5 -->
+<div class="faq-item">
+  <button class="faq-question">5. Where is the University of Perpetual Help System DALTA located?</button>
+  <div class="faq-answer">
+    <p>UPHSD is located in Las Piñas, Metro Manila, Philippines. Metro Manila is a safe, accessible city with hospitals, transport, shopping centers, and essential services.</p>
+  </div>
+  <div class="faq-chat">
+    <div class="faq-question-container">
+      <img src="image/faqimgquestion.png" alt="Question Icon" class="faq-avatar left">
+      <p class="faq-question-bubble">5. Where is the University of Perpetual Help System DALTA located?</p>
+    </div>
+    <div class="faq-answer-container">
+      <p class="faq-answer-bubble">UPHSD is located in Las Piñas, Metro Manila, Philippines. Metro Manila is a safe, accessible city with hospitals, transport, shopping centers, and essential services.</p>
+      <img src="image/faqimganswer.png" alt="Answer Icon" class="faq-avatar right">
+    </div>
+  </div>
+</div>
+
+<!-- 6 -->
+<div class="faq-item">
+  <!-- Original FAQ -->
+  <button class="faq-question">6. What facilities does UPHSD offer to medical students?</button>
+  <div class="faq-answer">
+    <p>
+      UPHSD has state-of-the-art facilities, including a 285-bed teaching hospital, and a 4-hectare campus located in Las Piñas City in the heart of Metro Manila.
+    </p>
+  </div>
+
+  <!-- Chat Bubble Mode (hidden by default) -->
+  <div class="faq-chat">
+    <div class="faq-question-container">
+      <img src="image/faqimgquestion.png" alt="Question Icon" class="faq-avatar left">
+      <p class="faq-question-bubble">6. What facilities does UPHSD offer to medical students?</p>
+    </div>
+    <div class="faq-answer-container">
+      <p class="faq-answer-bubble">
+        UPHSD has state-of-the-art facilities, including a 285-bed teaching hospital, and a 4-hectare campus located in Las Piñas City in the heart of Metro Manila.
+      </p>
+      <img src="image/faqimganswer.png" alt="Answer Icon" class="faq-avatar right">
+    </div>
+  </div>
+</div>
+
+<!-- 7 -->
+<div class="faq-item">
+  <!-- Original FAQ -->
+  <button class="faq-question">7. Is the BS-MD degree (MBBS) from UPHSD recognized internationally?</button>
+  <div class="faq-answer">
+    <p>
+      Yes. The BS-MD degree from UPHSD is recognized by the Nepal Medical Council (NMC), Medical Education Commission (MEC), Medical Council of India (MCI/NMC), US Educational Commission for Foreign Medical Graduates (ECFMG), General Medical Council (GMC) in the UK, the Australian Medical Council (AMC), and various other medical boards worldwide.
+    </p>
+  </div>
+
+  <!-- Chat Bubble Mode (hidden by default) -->
+  <div class="faq-chat">
+    <div class="faq-question-container">
+      <img src="image/faqimgquestion.png" alt="Question Icon" class="faq-avatar left">
+      <p class="faq-question-bubble">7. Is the BS-MD degree (MBBS) from UPHSD recognized internationally?</p>
+    </div>
+    <div class="faq-answer-container">
+      <p class="faq-answer-bubble">
+        Yes. The BS-MD degree from UPHSD is recognized by the Nepal Medical Council (NMC), Medical Education Commission (MEC), Medical Council of India (MCI/NMC), US Educational Commission for Foreign Medical Graduates (ECFMG), General Medical Council (GMC) in the UK, the Australian Medical Council (AMC), and various other medical boards worldwide.
+      </p>
+      <img src="image/faqimganswer.png" alt="Answer Icon" class="faq-avatar right">
+    </div>
+  </div>
+</div>
+
+
+<!-- 8 -->
+<div class="faq-item">
+  <!-- Original FAQ -->
+  <button class="faq-question">8. How many total years is the medical course in the Philippines?</button>
+  <div class="faq-answer">
+    <ul>
+      <li>2 years BS Biology (Pre-Med)</li>
+      <li>4 years Medicine Proper (optional 4th-year U.S. clinical internship)</li>
+      <li>1 year Postgraduate Internship</li>
+    </ul>
+  </div>
+
+  <!-- Chat Bubble Mode (hidden by default) -->
+  <div class="faq-chat">
+    <div class="faq-question-container">
+      <img src="image/faqimgquestion.png" alt="Question Icon" class="faq-avatar left">
+      <p class="faq-question-bubble">8. How many total years is the medical course in the Philippines?</p>
+    </div>
+    <div class="faq-answer-container">
+      <ul class="faq-answer-bubble">
+        <li>2 years BS Biology (Pre-Med)</li>
+        <li>4 years Medicine Proper (optional 4th-year U.S. clinical internship)</li>
+        <li>1 year Postgraduate Internship</li>
+      </ul>
+      <img src="image/faqimganswer.png" alt="Answer Icon" class="faq-avatar right">
+    </div>
+  </div>
+</div>
+
+<!-- 9 -->
+<div class="faq-item">
+  <!-- Original FAQ -->
+  <button class="faq-question">9. Do you provide U.S. clinical internships?</button>
+  <div class="faq-answer">
+    <p>Yes. In the 4th year of medical school, we offer optional clinical internships in our partner hospitals in the USA.</p>
+  </div>
+
+  <!-- Chat Bubble Mode (hidden by default) -->
+  <div class="faq-chat">
+    <div class="faq-question-container">
+      <img src="image/faqimgquestion.png" alt="Question Icon" class="faq-avatar left">
+      <p class="faq-question-bubble">9. Do you provide U.S. clinical internships?</p>
+    </div>
+    <div class="faq-answer-container">
+      <p class="faq-answer-bubble">Yes. In the 4th year of medical school, we offer optional clinical internships in our partner hospitals in the USA.</p>
+      <img src="image/faqimganswer.png" alt="Answer Icon" class="faq-avatar right">
+    </div>
+  </div>
+</div>
+
+<!-- 10-->
+<div class="faq-item">
+  <!-- Original FAQ -->
+  <button class="faq-question">10. Where can I complete my 4th-year internship?</button>
+  <div class="faq-answer">
+    <ul>
+      <li>Complete your 4th-year rotations entirely in the USA</li>
+      <li>Complete them entirely in the Philippines</li>
+      <li>Mix and match—some rotations in the USA and some in the Philippines—for a budget-friendly option</li>
+    </ul>
+  </div>
+
+  <!-- Chat Bubble Mode (hidden by default) -->
+  <div class="faq-chat">
+    <div class="faq-question-container">
+      <img src="image/faqimgquestion.png" alt="Question Icon" class="faq-avatar left">
+      <p class="faq-question-bubble">10. Where can I complete my 4th-year internship?</p>
+    </div>
+    <div class="faq-answer-container">
+      <ul class="faq-answer-bubble">
+        <li>Complete your 4th-year rotations entirely in the USA</li>
+        <li>Complete them entirely in the Philippines</li>
+        <li>Mix and match—some rotations in the USA and some in the Philippines—for a budget-friendly option</li>
+      </ul>
+      <img src="image/faqimganswer.png" alt="Answer Icon" class="faq-avatar right">
+    </div>
+  </div>
+</div>
+
+<!-- 11 -->
+<div class="faq-item">
+  <!-- Original FAQ -->
+  <button class="faq-question">11. Is there a separate fee for U.S. rotations?</button>
+  <div class="faq-answer">
+    <p>Yes. U.S. rotations have a separate fee. Regardless of where you do them, these count as your official 4th-year internship/clerkship.</p>
+  </div>
+
+  <!-- Chat Bubble Mode (hidden by default) -->
+  <div class="faq-chat">
+    <div class="faq-question-container">
+      <img src="image/faqimgquestion.png" alt="Question Icon" class="faq-avatar left">
+      <p class="faq-question-bubble">11. Is there a separate fee for U.S. rotations?</p>
+    </div>
+    <div class="faq-answer-container">
+      <p class="faq-answer-bubble">Yes. U.S. rotations have a separate fee. Regardless of where you do them, these count as your official 4th-year internship/clerkship.</p>
+      <img src="image/faqimganswer.png" alt="Answer Icon" class="faq-avatar right">
+    </div>
+  </div>
+</div>
+
+
+<!-- 12 -->
+<div class="faq-item">
+  <button class="faq-question">12. Why should I do my internship or clinical rotations in the USA?</button>
+  <div class="faq-answer">
+    <p>Doing your internship or clinical rotations in the USA significantly boosts your chances of matching into postgraduate residency programs in the USA. It also provides U.S. hospital experience, improves your medical English, helps you build professional connections, and strengthens your CV for future opportunities worldwide.</p>
+  </div>
+  <div class="faq-chat">
+    <div class="faq-question-container">
+      <img src="image/faqimgquestion.png" alt="Question Icon" class="faq-avatar left">
+      <p class="faq-question-bubble">12. Why should I do my internship or clinical rotations in the USA?</p>
+    </div>
+    <div class="faq-answer-container">
+      <p class="faq-answer-bubble">Doing your internship or clinical rotations in the USA significantly boosts your chances of matching into postgraduate residency programs in the USA. It also provides U.S. hospital experience, improves your medical English, helps you build professional connections, and strengthens your CV for future opportunities worldwide.</p>
+      <img src="image/faqimganswer.png" alt="Answer Icon" class="faq-avatar right">
+    </div>
+  </div>
+</div>
+
+<!-- 13-->
+<div class="faq-item">
+  <button class="faq-question">13. Is DataFil partnered with Global Educational Counseling Center?</button>
+  <div class="faq-answer">
+    <p>
+      Yes. We are partnered with and endorse the same university where the 
+      <a href="https://www.globaleducc.com/" target="_blank" class="faq-link">
+        <strong>Global Educational Counseling Center</strong>
+      </a>
+      has a physical office in Kathmandu and New Delhi. Students and parents can inquire there for local concerns.
+    </p>
+  </div>
+  <div class="faq-chat">
+    <div class="faq-question-container">
+      <img src="image/faqimgquestion.png" alt="Question Icon" class="faq-avatar left">
+      <p class="faq-question-bubble">13. Is DataFil partnered with Global Educational Counseling Center?</p>
+    </div>
+    <div class="faq-answer-container">
+      <p class="faq-answer-bubble">
+        Yes. We are partnered with and endorse the same university where the 
+        <a href="https://www.globaleducc.com/" target="_blank" class="faq-link">
+          <strong>Global Educational Counseling Center</strong>
+        </a>
+        has a physical office in Kathmandu and New Delhi. Students and parents can inquire there for local concerns.
+      </p>
+      <img src="image/faqimganswer.png" alt="Answer Icon" class="faq-avatar right">
+    </div>
+  </div>
+</div>
+
+<!-- 14 -->
+<div class="faq-item">
+  <button class="faq-question">14. What is the difference between going through DataFil vs other agencies?</button>
+  <div class="faq-answer">
+    <p>We have staff in the Philippines who are experts in the Filipino medical school system, including Nepali, Indian, and Filipino medical doctors who graduated from Philippine medical schools. We provide academic and personal guidance, bridge cultural gaps, and are available 24/7 to support students.</p>
+  </div>
+  <div class="faq-chat">
+    <div class="faq-question-container">
+      <img src="image/faqimgquestion.png" alt="Question Icon" class="faq-avatar left">
+      <p class="faq-question-bubble">14. What is the difference between going through DataFil vs other agencies?</p>
+    </div>
+    <div class="faq-answer-container">
+      <p class="faq-answer-bubble">We have staff in the Philippines who are experts in the Filipino medical school system, including Nepali, Indian, and Filipino medical doctors who graduated from Philippine medical schools. We provide academic and personal guidance, bridge cultural gaps, and are available 24/7 to support students.</p>
+      <img src="image/faqimganswer.png" alt="Answer Icon" class="faq-avatar right">
+    </div>
+  </div>
+</div>
+
+<!-- 15 -->
+<div class="faq-item">
+  <button class="faq-question">15. Why choose DataFil?</button>
+  <div class="faq-answer">
+    <p>DataFil is the only organization registered with the Securities and Exchange Commission of the Philippines specifically for Nepali and Indian students. Our team of medical doctors provides 24/7 guidance from day one to graduation, acting as guardians and mentors throughout the medical journey.</p>
+  </div>
+  <div class="faq-chat">
+    <div class="faq-question-container">
+      <img src="image/faqimgquestion.png" alt="Question Icon" class="faq-avatar left">
+      <p class="faq-question-bubble">15. Why choose DataFil?</p>
+    </div>
+    <div class="faq-answer-container">
+      <p class="faq-answer-bubble">DataFil is the only organization registered with the Securities and Exchange Commission of the Philippines specifically for Nepali and Indian students. Our team of medical doctors provides 24/7 guidance from day one to graduation, acting as guardians and mentors throughout the medical journey.</p>
+      <img src="image/faqimganswer.png" alt="Answer Icon" class="faq-avatar right">
+    </div>
+  </div>
+</div>
+
+<!-- 16 -->
+<div class="faq-item">
+  <button class="faq-question">16. Do you provide lodging and meals?</button>
+  <div class="faq-answer">
+    <p>
+      Yes. We arrange safe, comfortable student housing near the university, along with optional meal plans offering Nepali and Indian cuisine. Housing & food costs are around ₹15,000–₹20,000 per month (approximate). If you want to change housing, we’ll help you find a better fit for your needs and budget.
+    </p>
+  </div>
+  <div class="faq-chat">
+    <div class="faq-question-container">
+      <img src="image/faqimgquestion.png" alt="Question Icon" class="faq-avatar left">
+      <p class="faq-question-bubble">16. Do you provide lodging and meals?</p>
+    </div>
+    <div class="faq-answer-container">
+      <p class="faq-answer-bubble">
+        Yes. We arrange safe, comfortable student housing near the university, along with optional meal plans offering Nepali and Indian cuisine. Housing & food costs are around ₹15,000–₹20,000 per month (approximate). If you want to change housing, we’ll help you find a better fit for your needs and budget.
+      </p>
+      <img src="image/faqimganswer.png" alt="Answer Icon" class="faq-avatar right">
+    </div>
+  </div>
+</div>
+
+<!-- 17 -->
+<div class="faq-item">
+  <button class="faq-question">17. What documents are required for Nepali applicants?</button>
+  <div class="faq-answer">
+    <ul>
+      <li>Valid Passport</li>
+      <li>SEE Grade Sheet and Character Certificate</li>
+      <li>+2 Transcript and Character Certificate</li>
+      <li>Citizenship Certificate</li>
+      <li>Passport-size Photographs (10 copies)</li>
+      <li>Application Letter to the Registrar of the University</li>
+    </ul>
+  </div>
+  <div class="faq-chat">
+    <div class="faq-question-container">
+      <img src="image/faqimgquestion.png" alt="Question Icon" class="faq-avatar left">
+      <p class="faq-question-bubble">17. What documents are required for Nepali applicants?</p>
+    </div>
+    <div class="faq-answer-container">
+      <ul class="faq-answer-bubble">
+        <li>Valid Passport</li>
+        <li>SEE Grade Sheet and Character Certificate</li>
+        <li>+2 Transcript and Character Certificate</li>
+        <li>Citizenship Certificate</li>
+        <li>Passport-size Photographs (10 copies)</li>
+        <li>Application Letter to the Registrar of the University</li>
+      </ul>
+      <img src="image/faqimganswer.png" alt="Answer Icon" class="faq-avatar right">
+    </div>
+  </div>
+</div>
+
+<!-- 18 -->
+<div class="faq-item">
+  <button class="faq-question">18. What is the step-by-step processing procedure for Nepali students?</button>
+  <div class="faq-answer">
+    <ol>
+      <li>Obtain Passport</li>
+      <li>Fill Out the Application – submit all forms and documents to Global Educational Counseling Center</li>
+      <li>Pay Application Fee – non-refundable reservation fee as per university instructions</li>
+      <li>Get a Provisional Admission Letter from UPHSD</li>
+      <li>Obtain Entrance Exam Pass Certificate from MEC</li>
+      <li>Apply for Eligibility Certificate from MEC</li>
+      <li>Get NOC Letter from the Ministry of Education, Science and Technology, Nepal</li>
+      <li>Authenticate Documents through the Philippine Consulate</li>
+      <li>Visa on Arrival – upgraded to student visa upon arrival by UPHSD liaison officer</li>
+    </ol>
+  </div>
+  <div class="faq-chat">
+    <div class="faq-question-container">
+      <img src="image/faqimgquestion.png" alt="Question Icon" class="faq-avatar left">
+      <p class="faq-question-bubble">18. What is the step-by-step processing procedure for Nepali students?</p>
+    </div>
+    <div class="faq-answer-container">
+      <ol class="faq-answer-bubble">
+        <li>Obtain Passport</li>
+        <li>Fill Out the Application – submit all forms and documents to Global Educational Counseling Center</li>
+        <li>Pay Application Fee – non-refundable reservation fee as per university instructions</li>
+        <li>Get a Provisional Admission Letter from UPHSD</li>
+        <li>Obtain Entrance Exam Pass Certificate from MEC</li>
+        <li>Apply for Eligibility Certificate from MEC</li>
+        <li>Get NOC Letter from the Ministry of Education, Science and Technology, Nepal</li>
+        <li>Authenticate Documents through the Philippine Consulate</li>
+        <li>Visa on Arrival – upgraded to student visa upon arrival by UPHSD liaison officer</li>
+      </ol>
+      <img src="image/faqimganswer.png" alt="Answer Icon" class="faq-avatar right">
+    </div>
+  </div>
+</div>
+
+<!-- 19 -->
+<div class="faq-item">
+  <button class="faq-question">19. What documents are required for Indian applicants?</button>
+  <div class="faq-answer">
+    <ul>
+      <li>Valid Passport</li>
+      <li>Application form for student visa</li>
+      <li>3 passport-size photographs</li>
+      <li>Medical health certificate</li>
+      <li>NOA (Original Notice of Acceptance)</li>
+      <li>CEA (Police Clearance Certificate authenticated by the Philippine Embassy)</li>
+      <li>Visa Fee</li>
+    </ul>
+  </div>
+  <div class="faq-chat">
+    <div class="faq-question-container">
+      <img src="image/faqimgquestion.png" alt="Question Icon" class="faq-avatar left">
+      <p class="faq-question-bubble">19. What documents are required for Indian applicants?</p>
+    </div>
+    <div class="faq-answer-container">
+      <ul class="faq-answer-bubble">
+        <li>Valid Passport</li>
+        <li>Application form for student visa</li>
+        <li>3 passport-size photographs</li>
+        <li>Medical health certificate</li>
+        <li>NOA (Original Notice of Acceptance)</li>
+        <li>CEA (Police Clearance Certificate authenticated by the Philippine Embassy)</li>
+        <li>Visa Fee</li>
+      </ul>
+      <img src="image/faqimganswer.png" alt="Answer Icon" class="faq-avatar right">
+    </div>
+  </div>
+</div>
+
+<!-- 20 -->
+<div class="faq-item">
+  <button class="faq-question">20. What is the step-by-step application process for Indian students?</button>
+  <div class="faq-answer">
+    <ol>
+      <li>Fill Out the Application Form – complete with accurate personal and academic details</li>
+      <li>Submit scanned documents: 12th-grade mark sheet, NEET scorecard, valid passport, passport-sized photographs</li>
+      <li>Pay Application Fee – non-refundable reservation fee</li>
+      <li>Submit Original Documents for verification by the university</li>
+      <li>Receive Letter of Acceptance (LOA) from UPHSD</li>
+      <li>Apply for Philippine Student Visa or Special Study Permit with passport, LOA, completed visa form, photos, proof of financial capacity, police clearance, medical reports</li>
+    </ol>
+  </div>
+  <div class="faq-chat">
+    <div class="faq-question-container">
+      <img src="image/faqimgquestion.png" alt="Question Icon" class="faq-avatar left">
+      <p class="faq-question-bubble">20. What is the step-by-step application process for Indian students?</p>
+    </div>
+    <div class="faq-answer-container">
+      <ol class="faq-answer-bubble">
+        <li>Fill Out the Application Form – complete with accurate personal and academic details</li>
+        <li>Submit scanned documents: 12th-grade mark sheet, NEET scorecard, valid passport, passport-sized photographs</li>
+        <li>Pay Application Fee – non-refundable reservation fee</li>
+        <li>Submit Original Documents for verification by the university</li>
+        <li>Receive Letter of Acceptance (LOA) from UPHSD</li>
+        <li>Apply for Philippine Student Visa or Special Study Permit with passport, LOA, completed visa form, photos, proof of financial capacity, police clearance, medical reports</li>
+      </ol>
+      <img src="image/faqimganswer.png" alt="Answer Icon" class="faq-avatar right">
+    </div>
+  </div>
+</div>
+
+<!-- 21 -->
+<div class="faq-item">
+  <button class="faq-question">21. How safe is the Philippines for students?</button>
+  <div class="faq-answer">
+    <p>The Philippines is safe, and both the campus area and student residential areas have 24/7 security personnel and surveillance cameras to ensure safety.</p>
+  </div>
+  <div class="faq-chat">
+    <div class="faq-question-container">
+      <img src="image/faqimgquestion.png" alt="Question Icon" class="faq-avatar left">
+      <p class="faq-question-bubble">21. How safe is the Philippines for students?</p>
+    </div>
+    <div class="faq-answer-container">
+      <p class="faq-answer-bubble">The Philippines is safe, and both the campus area and student residential areas have 24/7 security personnel and surveillance cameras to ensure safety.</p>
+      <img src="image/faqimganswer.png" alt="Answer Icon" class="faq-avatar right">
+    </div>
+  </div>
+</div>
+
+<!-- 22 -->
+<div class="faq-item">
+  <button class="faq-question">22. What is the Student Portal and how does it help?</button>
+  <div class="faq-answer">
+    <div class="faq-answer-bubble">
+      <p>The Student Portal is a secure online platform provided exclusively by DataFil for students and their parents. It offers full transparency and easy access to important academic and financial information in real time. Through the portal, students and parents can:</p>
+      <ul>
+        <li>View grades and academic progress</li>
+        <li>Track attendance</li>
+        <li>See upcoming installment due dates</li>
+        <li>Access history of payments made and remaining balances</li>
+        <li>Monitor their child’s overall progress and performance</li>
+      </ul>
+      <p>The portal is available 24/7 and is confidential. This system is unique to DataFil and the Global Educational Counseling Center—no other agencies provide this level of transparency.</p>
+    </div>
+  </div>
+  <div class="faq-chat">
+    <div class="faq-question-container">
+      <img src="image/faqimgquestion.png" alt="Question Icon" class="faq-avatar left">
+      <p class="faq-question-bubble">22. What is the Student Portal and how does it help?</p>
+    </div>
+    <div class="faq-answer-container">
+      <div class="faq-answer-bubble">
+        <p>The Student Portal is a secure online platform provided exclusively by DataFil for students and their parents. It offers full transparency and easy access to important academic and financial information in real time. Through the portal, students and parents can:</p>
+        <ul>
+          <li>View grades and academic progress</li>
+          <li>Track attendance</li>
+          <li>See upcoming installment due dates</li>
+          <li>Access history of payments made and remaining balances</li>
+          <li>Monitor their child’s overall progress and performance</li>
+        </ul>
+        <p>The portal is available 24/7 and is confidential. This system is unique to DataFil and the Global Educational Counseling Center—no other agencies provide this level of transparency.</p>
+      </div>
+      <img src="image/faqimganswer.png" alt="Answer Icon" class="faq-avatar right">
+    </div>
+  </div>
+</div>
+
+
+
+<!-- 23 -->
+<div class="faq-item">
+  <button class="faq-question">23. How can DataFil help students academically?</button>
+  <div class="faq-answer">
+    <div class="faq-answer-bubble">
+      <p>What sets DataFil apart from other agencies is our comprehensive academic support. We provide:</p>
+      <ul>
+        <li>eBooks and annually updated notes</li>
+        <li>Past exam questions and research papers</li>
+        <li>Case discussions and case presentations</li>
+        <li>A wide range of learning resources—all updated every year and provided free of cost</li>
+      </ul>
+      <p>Our team of experienced medical doctors guides students through these materials, helping them succeed in exams and clinical training while building a strong foundation for their medical career. This service is exclusive to students who joined through DataFil and the Global Educational Counseling Center.</p>
+    </div>
+  </div>
+  <div class="faq-chat">
+    <div class="faq-question-container">
+      <img src="image/faqimgquestion.png" alt="Question Icon" class="faq-avatar left">
+      <p class="faq-question-bubble">23. How can DataFil help students academically?</p>
+    </div>
+    <div class="faq-answer-container">
+      <div class="faq-answer-bubble">
+        <p>What sets DataFil apart from other agencies is our comprehensive academic support. We provide:</p>
+        <ul>
+          <li>eBooks and annually updated notes</li>
+          <li>Past exam questions and research papers</li>
+          <li>Case discussions and case presentations</li>
+          <li>A wide range of learning resources—all updated every year and provided free of cost</li>
+        </ul>
+        <p>Our team of experienced medical doctors guides students through these materials, helping them succeed in exams and clinical training while building a strong foundation for their medical career. This service is exclusive to students who joined through DataFil and the Global Educational Counseling Center.</p>
+      </div>
+      <img src="image/faqimganswer.png" alt="Answer Icon" class="faq-avatar right">
+    </div>
+  </div>
+</div>
+
+
+<!-- 24 -->
+<div class="faq-item">
+  <button class="faq-question">24. Does DataFil provide postgraduate residency programs?</button>
+  <div class="faq-answer">
+    <p>Yes. We offer postgraduate residency programs (specialization) with several partnered hospitals in the Philippines.</p>
+  </div>
+  <div class="faq-chat">
+    <div class="faq-question-container">
+      <img src="image/faqimgquestion.png" alt="Question Icon" class="faq-avatar left">
+      <p class="faq-question-bubble">24. Does DataFil provide postgraduate residency programs?</p>
+    </div>
+    <div class="faq-answer-container">
+      <p class="faq-answer-bubble">Yes. We offer postgraduate residency programs (specialization) with several partnered hospitals in the Philippines.</p>
+      <img src="image/faqimganswer.png" alt="Answer Icon" class="faq-avatar right">
+    </div>
+  </div>
+</div>
+</section>
+
+
+  <!-- ✨ FAQ Contact Form Section -->
+<section class="faq-question-form">
+  <div class="form-wrapper">
+    <h2>Still Have Questions?</h2>
+    <p>We’re here to help! If your question wasn’t answered above, feel free to reach out below. Just fill out the form and one of our team members will get back to you shortly.</p>
+
+    <form class="contact-form" action="https://formsubmit.co/datafilusa@gmail.com" method="POST">
+      <!-- ✅ Hidden Config Fields -->
+      <input type="hidden" name="_next" value="https://datafil-va.com/thank-you.html">
+      <input type="hidden" name="_autoresponse" value="Thank you for contacting DataFil. We'll get back to you as soon as possible!">
+      <input type="hidden" name="_captcha" value="false">
+
+      <!-- ✅ Full Name Field (Required by FormSubmit) -->
+      <div class="form-group">
+        <input type="text" name="name" placeholder="Full Name *" required>
+      </div>
+
+      <!-- ✅ Email and Phone -->
+      <div class="form-group">
+        <input type="email" name="email" placeholder="Email *" required>
+        <input type="tel" name="phone" placeholder="Phone Number (optional)">
+      </div>
+
+      <!-- ✅ Message -->
+      <div class="form-group">
+        <textarea name="message" placeholder="Your Question *" required></textarea>
+      </div>
+
+      <!-- ✅ Submit Button -->
+      <div class="form-submit">
+        <button type="submit">SEND</button>
+      </div>
+    </form>
+  </div>
+</section>
+
+</body>
+
+<div class="footer">
+  <div class="footer-top">
+    <span>&copy; 2025 DataFil.us All rights reserved</span>
+    <span class="privacypolicy">Privacy Policy</span>
+  </div>
+  <div class="footer-bottom">
+    <a href="contactus.html" class="footer-contact-btn">Contact Us</a>
+    <a href="https://www.facebook.com/DataFilUSA/" target="_blank">
+      <img src="image/fb-icon2.png" class="footer-icon" alt="Facebook">
+    </a>
+    <a href="https://www.instagram.com/datafilusa/" target="_blank">
+      <img src="image/ig-icon2.png" class="footer-icon" alt="Instagram">
+    </a>
+    <a href="https://twitter.com/DataFilUSA" target="_blank">
+      <img src="image/x-icon2.png" class="footer-icon" alt="Twitter">
+    </a>
+  </div>
+</div>
+
+
+
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const faqItems = document.querySelectorAll(".faq-item");
+
+  faqItems.forEach(item => {
+    const questionBtn = item.querySelector(".faq-question");
+    const chat = item.querySelector(".faq-chat");
+
+    questionBtn.addEventListener("click", (e) => {
+      e.stopPropagation(); // Prevent outside click from firing
+
+      const isActive = item.classList.contains("active");
+
+      // Close all other FAQ items except the clicked one
+      faqItems.forEach(i => {
+        if (i !== item) {
+          i.classList.remove("active");
+          const iChat = i.querySelector(".faq-chat");
+          if (iChat) iChat.style.display = "none";
+        }
+      });
+
+      // Toggle clicked FAQ item
+      if (isActive) {
+        item.classList.remove("active");
+        if (chat) chat.style.display = "none";
+      } else {
+        item.classList.add("active");
+        if (chat) chat.style.display = "flex";
+      }
+    });
+  });
+
+  // Collapse all FAQs when clicking outside
+  document.addEventListener("click", (e) => {
+    const clickedInsideFAQ = [...faqItems].some(item => item.contains(e.target));
+    if (!clickedInsideFAQ) {
+      faqItems.forEach(item => {
+        item.classList.remove("active");
+        const chat = item.querySelector(".faq-chat");
+        if (chat) chat.style.display = "none";
+      });
+    }
+  });
+
+  // Scroll down button
+  const scrollBtn = document.getElementById("scrollDownBtn");
+  if (scrollBtn) {
+    scrollBtn.addEventListener("click", () => {
+      window.scrollBy({ top: window.innerHeight, behavior: "smooth" });
+    });
+  }
+
+  // Search overlay toggle
+  const searchIcon = document.getElementById("searchIcon");
+  const overlay = document.getElementById("searchOverlay");
+  const overlayInput = document.getElementById("overlaySearchInput");
+
+  if (searchIcon && overlay) {
+    searchIcon.addEventListener("click", () => {
+      overlay.style.display = "flex";
+      overlayInput.focus();
+    });
+
+    overlay.addEventListener("click", (e) => {
+      if (e.target === overlay) overlay.style.display = "none";
+    });
+  }
+});
+</script>

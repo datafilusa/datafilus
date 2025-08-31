@@ -1,0 +1,289 @@
+body {
+  margin: 0;
+  overflow-x: hidden; /* This line prevents horizontal scrolling */
+  font-family: 'Open Sans', Arial, sans-serif;
+}
+.navbar {
+  margin: 0;
+  padding: 0;
+  height: var(--navbar-height);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+.cucover{
+display: flex;
+margin-top: 150px;
+position: relative;
+}
+
+.cucoverimg{
+  width: 100%;
+  position: relative;
+
+}
+
+.cuconnectwithus{
+  font-size: 250%;
+  font-weight: bold;
+  font-family: 'Montserrat', 'Poppins', sans-serif; /* Primary font: Poppins */
+  font-weight: 700;
+  color: #2d2d62;
+}
+.cutext{
+  z-index: 2;
+  position: absolute;
+  font-size: 150%;
+  color: #2d2d62;
+  margin-top: 16%;
+  margin-left: 50%;
+  font-family: 'Open Sans', sans-serif; /* or 'Roboto', 'Lato' */
+}
+
+.cusocialmediaicon{
+  margin-top: 20px;  
+}
+
+.cusocialmediaicon a {
+  width: auto;
+  padding: 0; /* Remove any padding */
+}
+
+.cufbimg,
+.cuigimg,
+.cuximg {
+  width: 5%;
+  margin: 0; /* Remove any margin */
+}
+
+.cuigimg{
+  margin-left: 30px;
+}
+
+.cuximg{
+  margin-left: 30px;
+}
+
+@media( max-width:1750px){
+
+  html,body{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+   }
+
+   .cutext{
+    margin-top: 14%;
+  }
+
+  .cufbimg{
+    width: 8.5%;
+  }
+  .cuigimg{
+    width: 8.5%;
+
+  }
+  .cuximg{
+    width:8.5%;
+ 
+}
+  }
+
+@media( max-width:1500px){
+
+  html,body{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+   }
+
+  .cuconnectwithus{
+    font-size:200%
+  }
+  .cutext{
+    font-size: 130%;
+    margin-top: 14%;
+  }
+
+  .cufbimg{
+    width: 9%;
+  }
+  .cuigimg{
+    width: 9%;
+
+  }
+  .cuximg{
+    width:9%;
+}
+}
+
+@media( max-width:1200px){
+
+  html,body{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+   }
+
+   .cutext{
+    margin-top: 12%;
+  }
+  }
+
+  @media( max-width:900px){
+
+    html,body{
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+     }
+  
+     .cutext{
+      margin-top: 10%;
+    }
+    }
+  
+
+@media( max-width:950px){
+  html,body{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+   }
+
+  .cuconnectwithus{
+    font-size:150%
+  }
+  .cutext{
+    font-size: 100%;
+    margin-top: 12%;
+  }
+
+  .cusocialmediaicon{
+    margin-top: 10px;
+  
+  }
+  .cufbimg{
+    width: 11%;
+  }
+  .cuigimg{
+    width: 11%;
+    margin-left: 20px;
+  }
+  .cuximg{
+    width: 11%;
+    margin-left: 20px;
+  }
+  
+
+
+}
+
+
+@media( max-width:800px){
+  html,body{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+   }
+
+   .cutext{
+    font-size: 70%;
+    margin-top: 14%;
+
+  }
+
+  .cucover{
+    display: flex;
+    margin-top: 80px;
+    position: relative;
+    }
+  }
+
+@media( max-width:600px){
+  html,body{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+   }
+
+  .cuconnectwithus{
+    font-size:100%
+  }
+  .cutext{
+    font-size: 70%;
+    margin-top: 12%;
+  }
+
+  .cusocialmediaicon{
+    margin-top: 8px;
+  
+  }
+  .cufbimg{
+    width: 12%;
+  }
+  .cuigimg{
+    width: 12%;
+    margin-left: 20px;
+  }
+  .cuximg{
+    width: 12%;
+    margin-left: 20px;
+  }
+
+
+}
+
+
+
+@media( max-width:500px){
+  html,body{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+   }
+
+  .cuconnectwithus{
+    font-size:100%
+  }
+  .cutext{
+    font-size: 70%;
+    margin-top: 12%;
+  }
+
+  .cusocialmediaicon{
+    margin-top: 8px;
+  
+  }
+  .cufbimg{
+    width: 12%;
+  }
+  .cuigimg{
+    width: 12%;
+    margin-left: 20px;
+  }
+  .cuximg{
+    width: 12%;
+    margin-left: 20px;
+  }
+
+
+}

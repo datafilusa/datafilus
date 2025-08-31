@@ -1,0 +1,116 @@
+/* FAQ Contact Form Styling */
+/* GLOBAL STYLES */
+body {
+  font-family: 'Open Sans', sans-serif;
+  background-color: #fff; /* Dirty white */
+  color: #333;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+.faq-question-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 20px;
+  background-color: #ffffff;
+}
+
+.faq-question-form .form-wrapper {
+  background-color: #2d2d62;
+  color: #ddbd78;
+  padding: 30px;
+  border-radius: 12px;
+  max-width: 800px;
+  width: 100%;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.faq-question-form h2 {
+  text-align: center;
+  margin-bottom: 10px;
+  font-size: 24px;
+}
+
+.faq-question-form p {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.contact-form .form-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.contact-form textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.form-submit {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.form-submit button {
+  background-color: #fff;
+  color: #2d2d62;
+  padding: 10px 25px;
+  font-size: 14px;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.form-submit button:hover {
+  background-color: #ddbd78;
+  color: #2d2d62;
+  transform: scale(1.02);
+}
+
+::placeholder {
+  color: #b0b0b0;
+  font-size: 14px;
+}
+
+@media (max-width: 500px) {
+  .faq-question-form .form-wrapper p {
+    font-size: 14px;
+  }
+
+  .faq-question-form .form-wrapper h2 {
+    font-size: 18px;
+  }
+
+  .contact-form .form-group {
+    flex-direction: column;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    font-size: 14px;
+  }
+
+  .form-submit button {
+    width: fit-content;
+    font-size: 14px;
+  }
+}

@@ -1,0 +1,102 @@
+.contact-section { 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 120px; /* Increased space between email and WhatsApp */
+  margin: 50px 0;
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+.contact-item {
+  display: flex;
+  flex-direction: row; /* Icons and text side by side */
+  align-items: center;
+  text-align: center;
+  text-decoration: none; /* Remove underline from link */
+}
+
+.contact-item img {
+  width: 60px;
+  height: 60px;
+  margin-right: 10px;
+}
+
+.whatsapp-icon {
+  width: 110px;
+  height: 90px;
+  margin-right: 0;
+  animation: pulse 2s infinite; /* Slower pulse */
+  transition: transform 0.3s ease;
+}
+
+.email-text, .whatsapp-text {
+  font-size: 18px;
+  font-weight: bold;
+  transition: transform 0.3s ease;
+}
+
+.email-text {
+  color: #2d2d62;
+}
+
+.whatsapp-text {
+  font-family: Helvetica, Arial, sans-serif;
+  color: #29a71a;
+  margin-left: 10px; /* Proper gap from WhatsApp icon */
+}
+
+/* Zoom effect on hover */
+.contact-item.whatsapp:hover .whatsapp-icon,
+.contact-item.whatsapp:hover .whatsapp-text {
+  transform: scale(1.2);
+  cursor: pointer; /* Hand pointer */
+}
+
+/* Pulsating keyframes without fading */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2); /* Grow icon */
+  }
+  100% {
+    transform: scale(1); /* Back to normal size */
+  }
+}
+
+/* Responsive layout for smaller screens */
+@media screen and (max-width: 700px) {
+  .contact-section {
+    flex-direction: column; /* Stack items vertically */
+    gap: 40px; /* Slightly more than before for spacing */
+  }
+
+  .contact-item {
+    justify-content: center; /* Center icons and text */
+  }
+
+  .contact-item.whatsapp {
+    margin-left: 0; /* Remove any horizontal offset */
+  }
+
+  /* Reduce sizes for mobile screens */
+  .contact-item img {
+    width: 40px;
+    height: 40px;
+    margin-right: 8px;
+  }
+
+  .whatsapp-icon {
+    width: 80px;
+    height: 65px;
+  }
+
+  .email-text, .whatsapp-text {
+    font-size: 14px;
+  }
+
+  .whatsapp-text {
+    margin-left: 5px; /* Adjust gap for mobile */
+  }
+}

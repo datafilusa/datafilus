@@ -1,0 +1,134 @@
+:root {
+  --navbar-height: 80px; /* adjust if needed */
+}
+
+/* ============================= */
+/* Navbar */
+/* ============================= */
+.navbar {
+  margin: 0;
+  padding: 0;
+  height: var(--navbar-height);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+/* ============================= */
+/* Video Section */
+/* ============================= */
+.video-section {
+  position: relative;
+  width: 100vw;
+  height: auto;              
+  max-height: 100vh;         
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;   
+  margin-top: var(--navbar-height);
+}
+
+.bg-video {
+  width: 100%;               
+  height: auto;              
+  object-fit: contain;       
+  position: relative;        
+  z-index: 1;
+  transform: none;           
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .video-section {
+    height: auto;
+    max-height: 50vh;        
+  }
+}
+
+/* ============================= */
+/* Scroll Down Button Styling */
+/* ============================= */
+.scroll-down-btn {
+  position: absolute;
+  left: 50%;
+  top: 75%;
+  transform: translate(-50%, -50%);
+  background: rgba(250, 208, 44, 0.8);
+  border: none;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.scroll-down-btn:hover {
+  background: rgba(255, 229, 102, 0.95);
+  transform: translateX(-50%) translateY(-5px);
+}
+
+/* Arrow container */
+.double-v {
+  position: relative;
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+}
+
+/* Top and bottom chevrons */
+.double-v::before,
+.double-v::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 6px solid #2d2d62;
+  animation: bounce 1.5s infinite;
+}
+
+.double-v::after {
+  top: 6px;
+  animation-delay: 0.2s;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+  40% { transform: translateY(5px); }
+  60% { transform: translateY(3px); }
+}
+
+/* Responsive adjustments */
+@media (max-width: 1500px) {
+  .scroll-down-btn { width: 50px; height: 50px; }
+  .double-v { width: 10px; height: 10px; }
+  .double-v::before, .double-v::after { border-left:5px solid transparent; border-right:5px solid transparent; border-top:5px solid #2d2d62; }
+}
+
+@media (max-width: 1200px) {
+  .scroll-down-btn { width: 45px; height: 45px; }
+  .double-v { width: 9px; height: 9px; }
+  .double-v::before, .double-v::after { border-left:4.5px solid transparent; border-right:4.5px solid transparent; border-top:4.5px solid #2d2d62; }
+}
+
+@media (max-width: 900px) {
+  .scroll-down-btn { width: 40px; height: 40px; }
+  .double-v { width: 8px; height: 8px; }
+  .double-v::before, .double-v::after { border-left:4px solid transparent; border-right:4px solid transparent; border-top:4px solid #2d2d62; }
+}
+
+@media (max-width: 600px) {
+  .scroll-down-btn { width: 35px; height: 35px; }
+  .double-v { width: 7px; height: 7px; }
+  .double-v::before, .double-v::after { border-left:3.5px solid transparent; border-right:3.5px solid transparent; border-top:3.5px solid #2d2d62; }
+}

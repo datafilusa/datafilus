@@ -1,0 +1,58 @@
+[
+  {
+    "title": "Home",
+    "url": "index.html",
+    "snippet": "Global Medical Opportunities, WFME accredited universities, U.S. clinical internships, competitive edge, postgraduate residency, academic resources, e-books, lecture notes, case discussions, past exam papers, free study materials, on-ground guidance, support team, Nepali doctors, Indian doctors, Filipino doctors, mentorship, exclusive clinical internship, USMLE guidance, ECFMG application, registered in USA, Nepal, India, Philippines, credibility, reliable support, complete study resources, lecture notes, case discussions, presentations, past exam questions, updated yearly, admission to WFME-accredited medical schools, partnered hospitals, quality education, clinical training, exclusive parent and student portal, view grades, attendance, tuition balances, billing schedules, payment history, confidential records, testimonials, M.D., clinical rotations, hands-on experience, partners, social media, contact, MD, privacy policy",
+    "image": "image/homepagethumb.png"
+  },
+
+ {
+  "title": "About Us",
+  "url": "aboutus.html",
+  "snippet": "DataFil LLC, founded November 3rd 2021, US Wyoming registration, Scott Wallace, Prajjwal Tamang, both MDs, international medical students, academic guidance, career counseling, mentorship, real-world medical practice, placements, global presence, offices in USA, India, Nepal, Malaysia, Philippines, personalized care, professional guidance, student support, core competencies, graduation success, Dr. Scott J. Wallace, MD, MBA, CEO, Co-Founder, Dr. Prajjwal Tamang, MD, President, Co-Founder, Dr. Edison N. Biag, MD, Vice President, Chief Operating Officer, Bibek Dahal, Angelica A. Dimaano, background, company, history, Chief Human Resources Officer, privacy policy, contact, social media, Facebook, Instagram, aboutus, Twitter",
+  "image": "image/aboutusthumb.png"
+},
+
+
+{
+  "title": "Our Services",
+  "url": "ourservices.html",
+  "snippet": "University of Perpetual Help System DALTA, medical student training, 4-hectare campus, state-of-the-art facilities, 283 hospital beds, tertiary teaching hospital, guaranteed seats, smooth application process, residency programs, NMC accredited hospitals, postgraduate specialization, hands-on experience, e-books, case discussions, lecture notes, past exam papers, free study materials, academic support, personalized mentorship, experienced doctors, Nepali doctors, Indian doctors, Filipino doctors, cultural guidance, academic guidance, lodging assistance, secure student housing, affordable accommodations, meal plans, Indian cuisine, Nepali cuisine, U.S. clinical internships, fourth-year clerkship, accredited clinical internship, U.S. hospitals, hands-on clinical experience, application support, documentation, travel arrangements, on-ground support team, airport pickup, daily assistance, parent student portal, real-time updates, grades, attendance, tuition balances, billing schedules, payment history, student support, parental involvement",
+  "image": "image/ourservicesthumb.png"
+},
+
+ {
+  "title": "FAQ",
+  "url": "faq.html",
+  "snippet": "MBBS in the Philippines, study medicine, affordable tuition, English instruction, Nepal, India, international students, UPHSD, University of Perpetual Help System DALTA, CHED-accredited, WFME-accredited, Las Piñas, Metro Manila, 285-bed teaching hospital, BS-MD degree recognition, NMC, MEC, MCI/NMC, ECFMG, GMC, AMC, medical course duration, 2-year BS Biology, 4-year Medicine Proper, 1-year Postgraduate Internship, U.S. clinical internship, Global Educational Counseling Center, step-by-step application process, Nepali applicants, Indian applicants, required documents, Philippine Student Visa, Special Study Permit, safety in the Philippines, student housing, meal plans, Nepali cuisine, Indian cuisine, Student Portal, real-time grades, attendance, tuition balance, academic progress, eBooks, lecture notes, past exam papers, case discussions, postgraduate residency programs, hands-on clinical experience",
+  "image": "image/faqthumb.png"
+},
+
+{
+  "title": "Contact Us",
+  "url": "contactus.html",
+  "snippet": "Connect with DataFil. Offices in USA (Casper, Wyoming), India (New Delhi, Gujarat), Nepal (Kathmandu, Bhairahwa), Philippines (Las Piñas City, Metro Manila). Contact via phone, email (datafilusa@gmail.com), WhatsApp, or online form. Reach out for queries, support, or feedback. Dedicated team ready to assist students internationally.",
+  "image": "image/contactusthumb.png",
+  "keywords": [
+    "DataFil contact",
+    "USA office Casper Wyoming",
+    "India office New Delhi Gujarat",
+    "Nepal office Kathmandu Bhairahwa",
+    "Philippines office Las Piñas Metro Manila",
+    "phone contact",
+    "email datafilusa@gmail.com",
+    "WhatsApp contact",
+    "student support",
+    "feedback",
+    "queries",
+    "international students"
+  ]
+},
+
+  {
+    "title": "Portal",
+    "url": "portal.html",
+    "snippet": "Access the Portal (login required), portal.",
+    "image": "image/portalthumb.png"
+  }
+]

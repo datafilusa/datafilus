@@ -1,0 +1,156 @@
+/* Import fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Open+Sans:wght@400;600&display=swap');
+
+/* Contacts Section */
+.contacts-section {
+  padding: 40px 20px;
+  background: #f9f9f9;
+}
+
+/* Grid Layout */
+.contacts-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Individual Cards */
+.contact-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease;
+}
+
+.contact-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Card Header */
+.card-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.card-header .flag {
+  height: 28px;
+  width: auto;
+  object-fit: contain;
+  border-radius: 4px;
+}
+
+/* Headings */
+.contact-card h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0;
+  color: #2d2d62;
+}
+
+/* Lists */
+.contact-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.contact-card ul li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+  font-size: 14px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  color: #333333;
+}
+
+/* Addresses (pin icons) left-aligned */
+.contact-card ul li:not(.phone-item) {
+  justify-content: flex-start;
+  text-align: left;
+}
+
+/* Phone rows (icon + number) centered horizontally on all screens */
+.phone-item {
+  justify-content: center;  /* horizontal center */
+}
+
+/* All icons */
+.contact-card ul li .icon {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+/* Phone link (default: not clickable on desktop) */
+.phone-link {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: #333 !important;
+  text-decoration: none !important;
+  cursor: default;           /* not clickable on desktop */
+  pointer-events: none;      /* disable clicks on desktop */
+}
+
+/* Make phone link clickable only on mobile */
+@media (max-width: 600px) {
+  .phone-link {
+    cursor: pointer;
+    pointer-events: auto;
+  }
+}
+
+/* Specific icon sizes */
+.contact-card ul li img[src*="pinicon"] {
+  width: 30px;
+  height: 30px;
+}
+
+.contact-card ul li img[src*="phoneicon"] {
+  width: 20px;
+  height: 20px;
+}
+
+.contact-card ul li img[src*="whatsappicon"] {
+  width: 50px;
+  height: 50px;
+}
+
+/* Note text */
+.contact-card ul li .note {
+  display: block;
+  text-align: center;
+  width: 100%;
+  font-size: 13px;
+  font-style: italic;
+  color: #555;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .contacts-grid {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 800px;
+  }
+}
+
+@media (max-width: 600px) {
+  .contacts-grid {
+    grid-template-columns: 1fr;
+    max-width: 400px;
+  }
+}

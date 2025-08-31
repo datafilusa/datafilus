@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DataFil - Contact Us</title>
+
+  <!-- CSS Files -->
+  <link rel="stylesheet" href="nav.css" />
+  <link rel="stylesheet" href="contactus.css" />
+  <link rel="stylesheet" href="contactuspart2.css" />
+  <link rel="stylesheet" href="contactuspart3.css" />
+  <link rel="stylesheet" href="contactuspart4.css" />
+  <link rel="stylesheet" href="footer.css" />
+
+  <!-- Search overlay CSS -->
+  <link rel="stylesheet" href="search-results.css" />
+
+  <!-- Search JS -->
+  <script src="search.js" defer></script>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Montserrat:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Open Graph Meta -->
+  <meta property="og:title" content="DataFil - Virtual Assistance Services" />
+  <meta property="og:description" content="Connecting continents and building dreams." />
+  <meta property="og:image" content="https://datafil-va.com/image/previewimage.png" />
+  <meta property="og:url" content="https://datafil-va.com" />
+  <meta property="og:type" content="website" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="DataFil - Virtual Assistance Services" />
+  <meta name="twitter:description" content="Connecting continents and building dreams." />
+  <meta name="twitter:image" content="https://datafil-va.com/image/previewimage.png" />
+
+  <!-- Font Rules -->
+  <style>
+    body {
+      font-family: 'Open Sans', sans-serif;
+      color: #333333; /* Dark Gray text */
+    }
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      color: #333333; /* same dark gray */
+    }
+  </style>
+</head>
+
+
+<body>
+<!-- Navbar -->
+<header class="navbar">
+  <div class="logo">
+    <a href="index.html">
+      <img src="image/datafillogo.png" alt="DataFil Logo" />
+    </a>
+  </div>
+
+  <nav class="nav-buttons" id="navButtons">
+    <a href="index.html"  ><button>HOME</button></a>
+    <a href="aboutus.html"><button>ABOUT US</button></a>
+    <a href="ourservices.html"><button>OUR SERVICES</button></a>
+    <a href="portal.html"><button>PORTAL</button></a>
+    <a href="faq.html"><button>FAQ</button></a>
+    <a href="contactus.html"  class="active"><button>CONTACT US</button></a>
+  </nav>
+
+  <!-- Right side: search + burger -->
+  <div class="navbar-right">
+    <button id="searchIcon" class="search-icon">
+      <img src="image/searchicon.png" alt="Search" />
+    </button>
+    <div class="burger" id="burgerMenu">☰</div>
+  </div>
+</header>
+<div id="searchResultsContainer" style="display:none;"></div>
+
+<!-- Full-screen search overlay -->
+<div id="searchOverlay" class="search-overlay">
+  <div class="search-box">
+    <input type="text" id="overlaySearchInput" placeholder="Type keywords to search..." />
+    <button id="overlaySearchButton">
+      <img src="image/searchicon3.png" alt="Search" />
+    </button>
+  </div>
+</div>
+
+
+
+<div class="cucover">
+  <img src="image/cucover.png" class="cucoverimg">
+    <div class="cutext"><span class="cuconnectwithus">CONNECT WITH US</span>
+    <br>We would love to respond to your 
+    <br>queries and help you succeed. 
+    <br>Feel free to get in touch with us. 
+    <div class="cusocialmediaicon"> 
+      <a href="https://www.facebook.com/DataFilUSA/"  target="_blank" style="text-decoration:none;"><img src="image/fb-icon1.png" class="cufbimg"> </a>
+      <a href="https://www.instagram.com/datafilusa/"  target="_blank" style="text-decoration:none;"><img src="image/ig-icon1.png" class="cuigimg">
+      </a>
+      <a href="https://twitter.com/DataFilUSA" target="_blank" style="text-decoration:none;"><img src="image/x-icon1.png" class="cuximg">
+      </a>
+    </div>  
+    </div>
+</div>
+
+
+<section class="contacts-section">
+  <div class="contacts-grid">
+
+    <!-- USA -->
+    <div class="contact-card">
+      <div class="card-header">
+        <img src="image/usa.png" alt="USA Flag" class="flag">
+        <h3>USA</h3>
+      </div>
+      <ul>
+        <li>
+          <img src="image/pinicon.png" alt="Address Icon" class="icon">
+          5830 East, 2nd Street, Casper, Wyoming, United States, 82609
+        </li>
+        <li class="phone-item">
+          <a href="tel:+18885229949">
+            <img src="image/phoneicon.png" alt="Phone Icon" class="icon phone-icon">
+            <span class="phone-number">+1 (888) 522 9949</span>
+          </a>
+        </li>
+        <li><span class="note">(Toll Free Number)</span></li>
+      </ul>
+    </div>
+
+    <!-- India -->
+    <div class="contact-card">
+      <div class="card-header">
+        <img src="image/india.png" alt="India Flag" class="flag">
+        <h3>India</h3>
+      </div>
+      <ul>
+        <li>
+          <img src="image/pinicon.png" alt="Address Icon" class="icon">
+           Ansal Chamber-1, Bhikaji Cama Place, New Delhi, 110066
+        </li>
+        <li class="phone-item">
+          <a href="tel:+919841120777">
+            <img src="image/phoneicon.png" alt="Phone Icon" class="icon phone-icon">
+            <span class="phone-number">+91 (984) 112 0777</span>
+          </a>
+        </li>
+        <li>
+          <img src="image/pinicon.png" alt="Address Icon" class="icon">
+          Gujarat
+        </li>
+        <li class="phone-item">
+          <a href="tel:+919104577962">
+            <img src="image/phoneicon.png" alt="Phone Icon" class="icon phone-icon">
+            <span class="phone-number">+91 (910) 457 7962</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Nepal -->
+    <div class="contact-card">
+      <div class="card-header">
+        <img src="image/nepal.png" alt="Nepal Flag" class="flag">
+        <h3>Nepal</h3>
+      </div>
+      <ul>
+        <li>
+          <img src="image/pinicon.png" alt="Address Icon" class="icon">
+          Bag Bazar Sadak, Kathmandu, 44600
+        </li>
+        <li class="phone-item">
+          <a href="tel:+9779861398386">
+            <img src="image/phoneicon.png" alt="Phone Icon" class="icon phone-icon">
+            <span class="phone-number">+977 (986) 139 8386</span>
+          </a>
+        </li>
+        <li>
+          <img src="image/pinicon.png" alt="Address Icon" class="icon">
+          Gallamandi-06, Bhairahwa, Rupandehi, 32900
+        </li>
+        <li class="phone-item">
+          <a href="tel:+9779805401600">
+            <img src="image/phoneicon.png" alt="Phone Icon" class="icon phone-icon">
+            <span class="phone-number">+977 (980) 540 1600</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Philippines -->
+    <div class="contact-card">
+      <div class="card-header">
+        <img src="image/philippines.png" alt="Philippines Flag" class="flag">
+        <h3>Philippines</h3>
+      </div>
+      <ul>
+        <li>
+          <img src="image/pinicon.png" alt="Address Icon" class="icon">
+          Pamplona, Las Piñas City, Metro-Manila, 1740
+        </li>
+        <li class="phone-item">
+          <a href="tel:+630286526426">
+            <img src="image/phoneicon.png" alt="Phone Icon" class="icon phone-icon">
+            <span class="phone-number">+63 02 8652 6426</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+
+
+
+
+<div class="contact-section">
+  <!-- Email section -->
+  <div class="contact-item email">
+    <img src="image/emailicon.png" alt="Email Icon">
+    <div class="email-text">datafilusa@gmail.com</div>
+  </div>
+
+  <!-- WhatsApp section -->
+  <a href="https://wa.me/639267352551" target="_blank" class="contact-item whatsapp">
+    <img src="image/whatsappicon.png" alt="WhatsApp Icon" class="whatsapp-icon">
+    <div class="whatsapp-text">WhatsApp</div>
+  </a>
+</div>
+
+
+
+
+
+
+
+
+
+  <!-- ✨Contact Form Section -->
+<section  id="contactFormSection" class="faq-question-form">
+  <div class="form-wrapper">
+    <h2>Get in touch.</h2>
+    <p>Whether you have questions about our services, need support, or want to share your feedback, our dedicated team is here to assist you every step of the way.</p>
+
+    <form class="contact-form" action="https://formsubmit.co/datafilusa@gmail.com" method="POST">
+      <!-- ✅ Hidden Config Fields -->
+      <input type="hidden" name="_next" value="https://datafil-va.com/thank-you.html">
+      <input type="hidden" name="_autoresponse" value="Thank you for contacting DataFil. We'll get back to you as soon as possible!">
+      <input type="hidden" name="_captcha" value="false">
+
+      <!-- ✅ Full Name Field (Required by FormSubmit) -->
+      <div class="form-group">
+        <input type="text" name="name" placeholder="Full Name *" required>
+      </div>
+
+      <!-- ✅ Email and Phone -->
+      <div class="form-group">
+        <input type="email" name="email" placeholder="Email *" required>
+        <input type="tel" name="phone" placeholder="Phone Number (optional)">
+      </div>
+
+      <!-- ✅ Message -->
+      <div class="form-group">
+        <textarea name="message" placeholder="Your Question *" required></textarea>
+      </div>
+
+      <!-- ✅ Submit Button -->
+      <div class="form-submit">
+        <button type="submit">SEND</button>
+      </div>
+    </form>
+  </div>
+</section>
+
+
+<div class="footer">
+  <div class="footer-top">
+    <span>&copy; 2025 DataFil.us All rights reserved</span>
+    <span class="privacypolicy">Privacy Policy</span>
+  </div>
+  <div class="footer-bottom">
+    <a href="contactus.html" class="footer-contact-btn">Contact Us</a>
+    <a href="https://www.facebook.com/DataFilUSA/" target="_blank">
+      <img src="image/fb-icon2.png" class="footer-icon" alt="Facebook">
+    </a>
+    <a href="https://www.instagram.com/datafilusa/" target="_blank">
+      <img src="image/ig-icon2.png" class="footer-icon" alt="Instagram">
+    </a>
+    <a href="https://twitter.com/DataFilUSA" target="_blank">
+      <img src="image/x-icon2.png" class="footer-icon" alt="Twitter">
+    </a>
+  </div>
+</div>
+</html>
+
+
+
+
+
+<script>
+  const whatsappVideo = document.querySelector('.contact-item video');
+  whatsappVideo.playbackRate = 0.5; // Slower video
+</script>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  function togglePhoneLinks() {
+    document.querySelectorAll(".phone-item").forEach(function (item) {
+      const number = item.dataset.number;
+      const phoneText = item.querySelector(".phone-number") 
+        ? item.querySelector(".phone-number").textContent.trim()
+        : item.querySelector("a span").textContent.trim();
+      const iconSrc = item.querySelector(".phone-icon") 
+        ? item.querySelector(".phone-icon").getAttribute("src")
+        : item.querySelector("a img").getAttribute("src");
+
+      if (window.innerWidth <= 600) {
+        // If not already wrapped in <a>, wrap it
+        if (!item.querySelector("a")) {
+          item.innerHTML = `
+            <a href="tel:${number}" class="phone-link">
+              <img src="${iconSrc}" alt="Phone Icon" class="icon phone-icon">
+              <span class="phone-number">${phoneText}</span>
+            </a>
+          `;
+        }
+      } else {
+        // On desktop, remove <a> if it exists
+        if (item.querySelector("a")) {
+          item.innerHTML = `
+            <img src="${iconSrc}" alt="Phone Icon" class="icon phone-icon">
+            <span class="phone-number">${phoneText}</span>
+          `;
+        }
+      }
+    });
+  }
+
+  // Run on load + on resize
+  togglePhoneLinks();
+  window.addEventListener("resize", togglePhoneLinks);
+});
+
+
+
+</script>

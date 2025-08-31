@@ -1,0 +1,92 @@
+body {
+  margin: 0;
+  overflow-x: hidden;
+  font-family: 'Open Sans', sans-serif, Arial;
+}
+
+.footer {
+  background-color:#2d2d62;
+  color: white;
+  padding: 30px 40px;
+  font-size: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.footer-top {
+  display: flex;
+  align-items: center;
+  gap: 50px; /* space between © text and Privacy Policy */
+}
+
+.footer-bottom {
+  display: flex;
+  align-items: center;
+  gap: 40px; /* add space between Contact Us and icons */
+}
+
+.footer a {
+  color: white;
+  text-decoration: none;
+}
+
+.footer-contact-btn {
+  background-color: white;
+  color: #2d2d62 !important;
+  padding: 10px 24px;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 14px;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.footer-contact-btn:hover {
+  background-color: #ffd359;
+  transform: scale(1.05);
+}
+
+.footer-icon {
+  width: 25px;
+  height: 25px;
+  transition: transform 0.2s ease;
+}
+
+.footer-icon:hover {
+  transform: scale(1.15);
+}
+
+@media (min-width: 1001px) {
+  .privacypolicy {
+    margin-right: 100px; /* increase gap before Contact Us */
+  }
+}
+
+
+/* ✅ Mobile (≤800px): stack into two rows */
+@media (max-width: 1000px) {
+  .footer {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 25px; /* breathing room between rows */
+  }
+
+  .footer-top {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px; /* spacing between © and Privacy Policy */
+  }
+
+  .footer-bottom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 25px; /* spacing between Contact Us and icons */
+  }
+}

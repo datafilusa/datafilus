@@ -1,0 +1,93 @@
+/* Testimonial Section */
+.testimonials {
+  background-color: #f7f7f7;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.testimonials h2 {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 34px;
+  font-weight: 800;
+  color: #2d2d62;
+  margin-bottom: 40px;
+  text-transform: uppercase;
+}
+
+.testimonial-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.testimonial-card {
+  background: white;
+  border-radius: 20px;
+  padding: 25px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-5px);
+}
+
+.testimonial-card img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 20px;
+}
+
+/* ✅ Merriweather italic for quotes */
+.testimonial-card .quote {
+  font-family: 'Merriweather', serif;
+  font-style: italic;
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 20px;
+  line-height: 1.7;
+}
+
+/* ✅ Open Sans for names */
+.testimonial-card h3 {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  color: #2d2d62;
+  margin-top: 10px;
+}
+
+/* Responsive: 2 per row on tablets */
+@media (max-width: 1024px) {
+  .testimonial-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Responsive: 1 per row on small screens */
+@media (max-width: 600px) {
+  .testimonial-container {
+    grid-template-columns: 1fr;
+  }
+
+  .testimonials h2 {
+    font-size: 24px;
+  }
+
+  .testimonial-card img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .testimonial-card .quote {
+    font-size: 14px;
+  }
+}

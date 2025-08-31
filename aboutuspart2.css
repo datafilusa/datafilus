@@ -1,0 +1,79 @@
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  font-family: 'Open Sans', sans-serif, Arial;
+}
+
+.team-section {
+  text-align: center;
+  padding: 60px 20px;
+  background-color: #ffffff;
+}
+
+.team-section h2 {
+  color: #2d2d62;
+  font-size: 32px;
+  margin-bottom: 40px;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.team-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px 80px; /* gap between team members horizontally and vertically */
+}
+
+.team-member {
+  flex: 1 1 160px;
+  max-width: 160px;
+  text-align: center;
+  margin-bottom: 30px; /* add vertical space between rows */
+}
+
+.team-member img {
+  width: 100%;
+  max-width: 160px;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 15px; /* space between image and text */
+}
+
+.team-member h3 {
+  font-size: 15px;
+  color: #2d2d62;
+  font-weight: bold;
+  margin-bottom: 5px;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.team-member p {
+  font-size: 14px;
+  color: #444;
+  font-family: 'Open Sans', sans-serif;
+}
+
+
+
+/* Medium screens: 2 – 2 – 1 layout */
+@media (max-width: 991px) {
+  .team-member {
+    flex: 1 1 45%;
+    max-width: 45%;
+  }
+
+  .team-member:nth-child(5) {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+}
+
+/* Small screens: 1 image per row */
+@media (max-width: 600px) {
+  .team-member {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+}

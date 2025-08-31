@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DataFil - Our Services</title>
+
+  <!-- Existing CSS -->
+  <link rel="stylesheet" href="nav.css" />
+  <link rel="stylesheet" href="ourservicespart1.css" />
+  <link rel="stylesheet" href="ourservicespart2.css" />
+  <link rel="stylesheet" href="footer.css" />
+
+  <!-- Search & Highlight CSS -->
+  <link rel="stylesheet" href="search-results.css" />
+
+  <!-- Existing JS -->
+  <script src="ourservicesscrollbutton.js" defer></script>
+
+  <!-- Search overlay JS -->
+  <script src="search.js" defer></script>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Merriweather:ital,wght@1,400&display=swap" rel="stylesheet" />
+
+  <!-- Open Graph Meta -->
+  <meta property="og:title" content="DataFil - Virtual Assistance Services" />
+  <meta property="og:description" content="Connecting continents and building dreams." />
+  <meta property="og:image" content="https://datafil-va.com/image/previewimage.png" />
+  <meta property="og:url" content="https://datafil-va.com" />
+  <meta property="og:type" content="website" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="DataFil - Virtual Assistance Services" />
+  <meta name="twitter:description" content="Connecting continents and building dreams." />
+  <meta name="twitter:image" content="https://datafil-va.com/image/previewimage.png" />
+</head>
+
+
+
+<body>
+
+  <!-- Navbar -->
+<header class="navbar">
+  <div class="logo">
+    <a href="index.html">
+      <img src="image/datafillogo.png" alt="DataFil Logo" />
+    </a>
+  </div>
+
+  <nav class="nav-buttons" id="navButtons">
+    <a href="index.html"><button>HOME</button></a>
+    <a href="aboutus.html"><button>ABOUT US</button></a>
+    <a href="ourservices.html" class="active"><button>OUR SERVICES</button></a>
+    <a href="portal.html"><button>PORTAL</button></a>
+    <a href="faq.html"><button>FAQ</button></a>
+    <a href="contactus.html"><button>CONTACT US</button></a>
+  </nav>
+
+  <!-- Right side: search + burger -->
+  <div class="navbar-right">
+    <button id="searchIcon" class="search-icon">
+      <img src="image/searchicon.png" alt="Search" />
+    </button>
+    <div class="burger" id="burgerMenu">☰</div>
+  </div>
+</header>
+<div id="searchResultsContainer" style="display:none;"></div>
+
+<!-- Full-screen search overlay -->
+<div id="searchOverlay" class="search-overlay">
+  <div class="search-box">
+    <input type="text" id="overlaySearchInput" placeholder="Type keywords to search..." />
+    <button id="overlaySearchButton">
+      <img src="image/searchicon3.png" alt="Search" />
+    </button>
+  </div>
+</div>
+
+<section class="video-section">
+  <video class="bg-video" autoplay muted loop playsinline>
+    <source src="image/datafilourservicesvideo.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+</section>
+
+  <section class="services-container">
+
+  <!-- Service Card 1 -->
+  <div class="service-card">
+    <img src="image/universityofperpetual.jpg" alt="University Placements" />
+    <div class="service-text">
+      <h2>University Placements with Guaranteed Seats</h2>
+      <p>We are proud partners of the University of Perpetual Help System DALTA, a leading institution with a sprawling 4-hectare campus and state-of-the-art facilities designed to train medical students to become the best physicians. With access to up to 283 hospital beds and a recognized tertiary teaching hospital, our partnership ensures a smooth application process and guaranteed seats at this trusted university.</p>
+    </div>
+  </div>
+
+  <!-- Service Card 2 -->
+  <div class="service-card">
+    <img src="image/residencyphilippines.jpeg" alt="Residency and Specialization" />
+    <div class="service-text">
+      <h2>Residency and Specialization Opportunities</h2>
+      <p>We also collaborate with NMC accredited hospitals in the Philippines to provide seats for postgraduate residency programs, giving you valuable specialization options and hands-on experience.</p>
+    </div>
+  </div>
+
+  <!-- Service Card 3 -->
+  <div class="service-card">
+    <img src="image/studymaterial.png" alt="Study Materials" />
+    <div class="service-text">
+      <h2>Comprehensive Study Materials and Academic Support</h2>
+      <p>From day one, we provide you with e-books, detailed case discussions, updated lecture notes, past exam papers, and more—all free of cost, providing you with efficient, targeted learning resources that give you the edge to excel and succeed throughout medical school.</p>
+    </div>
+  </div>
+
+  <!-- Service Card 4 -->
+  <div class="service-card">
+    <img src="image/mentorship.png" alt="Mentorship" />
+    <div class="service-text">
+      <h2>Personalized Mentorship from Experienced Doctors</h2>
+      <p>What sets us apart from other agencies is our unique team of medical doctors from Nepal, India, and the Philippines who reside close to the university, making them easily accessible and approachable anytime. By bridging cultural barriers and fostering strong connections between students and their institutions, we provide personalized academic guidance and heartfelt support tailored to each student’s needs.</p>
+    </div>
+  </div>
+
+  <!-- Service Card 5 -->
+  <div class="service-card">
+    <img src="image/lodgingmeal.png" alt="Lodging Assistance" />
+    <div class="service-text">
+      <h2>Safe and Comfortable Lodging with Meal Plans</h2>
+      <p>We arrange secure and affordable student housing near your university, ensuring a safe and comfortable stay. If you’re not satisfied with your current housing or want to find a new place, we’ll assist you in locating accommodations that better suit your preferences and budget. We also provide meal plans featuring Indian and Nepali cuisine, so you don’t miss home-cooked meals.</p>
+    </div>
+  </div>
+
+  <!-- Service Card 6 -->
+  <div class="service-card">
+    <img src="image/usrotation.png" alt="US Clerkship" />
+    <div class="service-text">
+      <h2>U.S. Clinical Internships for Hands-On Experience</h2>
+      <p>During your fourth year, we offer an optional clinical internship program in the USA, which can be accredited as your official fourth-year internship. Through our partnerships with reputable hospitals across the United States, we facilitate your placement to gain valuable hands-on experience in a real clinical setting.</p>
+      <p>Our team supports you through the application, documentation, housing, and travel arrangements to ensure a smooth and successful clinical experience that enhances your skills and strengthens your postgraduate residency application in the USA.</p>
+    </div>
+  </div>
+
+  <!-- Service Card 7 -->
+  <div class="service-card">
+    <img src="image/groundsupport.png" alt="On-Ground Support" />
+    <div class="service-text">
+      <h2>Dedicated Local Support Team</h2>
+      <p>From airport pickup to daily concerns, our on-ground support team is here to ensure you feel supported and confident throughout your stay in the Philippines.</p>
+    </div>
+  </div>
+
+  <!-- Service Card 8 -->
+  <div class="service-card">
+    <img src="image/portal.png" alt="Parent Student Portal" />
+    <div class="service-text">
+      <h2>Student & Parent Portal for Real-Time Updates</h2>
+      <p>We are proud to be the only agency offering a secure, advanced online portal that empowers both students and parents to stay fully informed and involved throughout the academic journey. Through this portal, you can access real-time updates on grades, attendance, tuition balances, billing schedules, and payment history.</p>
+      
+    </div>
+  </div>
+
+</section>
+</body>
+
+<div class="footer">
+  <div class="footer-top">
+    <span>&copy; 2025 DataFil.us All rights reserved</span>
+    <span class="privacypolicy">Privacy Policy</span>
+  </div>
+  <div class="footer-bottom">
+    <a href="contactus.html" class="footer-contact-btn">Contact Us</a>
+    <a href="https://www.facebook.com/DataFilUSA/" target="_blank">
+      <img src="image/fb-icon2.png" class="footer-icon" alt="Facebook">
+    </a>
+    <a href="https://www.instagram.com/datafilusa/" target="_blank">
+      <img src="image/ig-icon2.png" class="footer-icon" alt="Instagram">
+    </a>
+    <a href="https://twitter.com/DataFilUSA" target="_blank">
+      <img src="image/x-icon2.png" class="footer-icon" alt="Twitter">
+    </a>
+  </div>
+</div>
+
+
+
+

@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DataFil - Home</title>
+
+  <!-- Existing CSS -->
+  <link rel="stylesheet" href="nav.css" />
+  <link rel="stylesheet" href="homepagepart1.css" />
+  <link rel="stylesheet" href="homepagepart2.css" />
+  <link rel="stylesheet" href="homepagepart3.css" />
+  <link rel="stylesheet" href="homepagepart4.css" />
+  <link rel="stylesheet" href="homepagepart5.css" />
+  <link rel="stylesheet" href="homepagepart6.css" />
+  <link rel="stylesheet" href="footer.css" />
+
+  <!-- Search & Highlight CSS -->
+  <link rel="stylesheet" href="search-results.css" />
+
+  <!-- Existing JS -->
+  <script src="homepagescrollbutton.js" defer></script>
+
+  <!-- Search overlay JS -->
+  <script src="search.js" defer></script>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Merriweather:ital,wght@1,400&display=swap" rel="stylesheet" />
+
+  <!-- Open Graph Meta -->
+  <meta property="og:title" content="DataFil - Virtual Assistance Services" />
+  <meta property="og:description" content="Connecting continents and building dreams." />
+  <meta property="og:image" content="https://datafil-va.com/image/previewimage.png" />
+  <meta property="og:url" content="https://datafil-va.com" />
+  <meta property="og:type" content="website" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="DataFil - Virtual Assistance Services" />
+  <meta name="twitter:description" content="Connecting continents and building dreams." />
+  <meta name="twitter:image" content="https://datafil-va.com/image/previewimage.png" />
+</head>
+
+
+<body>
+<!-- Navbar -->
+<header class="navbar">
+  <div class="logo">
+    <a href="index.html">
+      <img src="image/datafillogo.png" alt="DataFil Logo" />
+    </a>
+  </div>
+
+  <nav class="nav-buttons" id="navButtons">
+    <a href="index.html"  class="active"><button>HOME</button></a>
+    <a href="aboutus.html"><button>ABOUT US</button></a>
+    <a href="ourservices.html"><button>OUR SERVICES</button></a>
+    <a href="portal.html"><button>PORTAL</button></a>
+    <a href="faq.html"><button>FAQ</button></a>
+    <a href="contactus.html"><button>CONTACT US</button></a>
+  </nav>
+
+  <!-- Right side: search + burger -->
+  <div class="navbar-right">
+    <button id="searchIcon" class="search-icon">
+      <img src="image/searchicon.png" alt="Search" />
+    </button>
+    <div class="burger" id="burgerMenu">☰</div>
+  </div>
+</header>
+<div id="searchResultsContainer" style="display:none;"></div>
+<!-- Full-screen search overlay -->
+<div id="searchOverlay" class="search-overlay">
+  <div class="search-box">
+    <input type="text" id="overlaySearchInput" placeholder="Type keywords to search..." />
+    <button id="overlaySearchButton">
+      <img src="image/searchicon3.png" alt="Search" />
+    </button>
+  </div>
+</div>
+
+
+<section class="video-section">
+  <video class="bg-video" autoplay muted loop playsinline>
+    <source src="image/homepagepart1vid.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+<div class="video-overlay">
+  <a href="contactus.html" class="inquire-btn">Inquire Now</a>
+</div>
+
+<button id="scrollDownBtn" class="scroll-down-btn">
+  <span class="double-v"></span>
+</button>
+</section>
+
+
+<!-- Education Consultancy Section -->
+<section class="edu-section">
+  <div class="edu-container">
+
+    <!-- Card 1 -->
+    <div class="edu-card">
+      <img src="image/globalopportunities.png" alt="Global Medical Opportunities">
+      <h3>Global Medical Opportunities</h3>
+      <p>
+        Gain access to WFME accredited universities and exclusive U.S. clinical internships 
+        that give you a competitive edge for postgraduate residency.
+      </p>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="edu-card">
+      <img src="image/academicresources.png" alt="Complete Academic Resources">
+      <h3>Complete Academic Resources</h3>
+      <p>
+        We provide e-books, lecture notes, case discussions, and past exam papers, free of cost
+        ensuring you’re always prepared.
+      </p>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="edu-card">
+      <img src="image/studentsupport.png" alt="On‑Ground Guidance & Support">
+      <h3>On‑Ground Guidance & Support</h3>
+      <p>
+Our team consists of Nepali, Indian, and Filipino doctors and staff, right here in the Philippines, just around the corner from your campus and always ready to help, so you get the support you need without delay.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+
+
+<section class="why-choose-us">
+  <div class="why-container">
+
+    <!-- Left Column with Image -->
+    <div class="why-image">
+      <img src="image/whychooseus.png" alt="Why Choose Us">
+    </div>
+
+    <!-- Right Column with Content -->
+    <div class="why-content">
+      <div class="step-card">
+        <div class="step-label">
+          <div class="step-number">1</div>
+          <div class="step-title">Exclusive U.S. Clinical Internship</div>
+        </div>
+        <p>We are the only agency in Nepal offering fourth-year clinical clerkships in partnered U.S. hospitals, giving you a strong edge for post graduate residency programs. We also guide you through the USMLE steps and ECFMG application process, backed by years of expertise.</p>
+      </div>
+
+      <div class="step-card">
+        <div class="step-label">
+          <div class="step-number">2</div>
+          <div class="step-title">Officially Registered in Four Countries</div>
+        </div>
+        <p>DataFil is registered in the USA, Nepal, India, and the Philippines, ensuring credibility and reliable support wherever you are.</p>
+      </div>
+
+      <div class="step-card">
+        <div class="step-label">
+          <div class="step-number">3</div>
+          <div class="step-title">Complete Study Resources</div>
+        </div>
+        <p>We provide lecture notes, case discussions, presentations, and past exam questions all updated yearly so you always have the latest and most relevant materials to succeed in medical school.</p>
+      </div>
+
+      <div class="step-card">
+        <div class="step-label">
+          <div class="step-number">4</div>
+          <div class="step-title">On‑Ground Support Team</div>
+        </div>
+        <p>At DataFil, our team of Nepali, Indian, and Filipino doctors and staff based here in the Philippines makes sure you never feel alone. With mentors who understand both your culture and the local environment, you’ll always have the guidance, support, and care you need to thrive in medical school.</p>
+      </div>
+
+      <div class="step-card">
+        <div class="step-label">
+          <div class="step-number">5</div>
+          <div class="step-title">Admission to Renowned Universities and Hospitals</div>
+        </div>
+        <p>Secure placement in WFME‑accredited medical schools and partnered hospitals, trusted worldwide for quality education and clinical training.</p>
+      </div>
+
+      <div class="step-card">
+        <div class="step-label">
+          <div class="step-number">6</div>
+          <div class="step-title">Exclusive Parent & Student Portal</div>
+        </div>
+        <p>We are the only agency offering a secure online portal where students and parents can view grades, attendance, tuition balances, billing schedules, and payment history in real time. All records are strictly confidential and accessible only to each student and their parents.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<section class="testimonials">
+  <h2>TESTIMONIALS</h2>
+  <div class="testimonial-container">
+
+    <!-- Testimonial 1 -->
+    <div class="testimonial-card">
+      <p class="quote">
+“If you want to strengthen your residency application for specialization in the US, a clinical internship in American hospitals is the best way. My internship gave me the skills, exposure, and confidence to stand out, and it played a big role in helping me match successfully.”
+      </p>
+      <img src="image/testimonial1.png" alt="Dr. John Russel">
+      <h3>Dr. John Russel, M.D.</h3>
+    </div>
+
+    <!-- Testimonial 2 -->
+    <div class="testimonial-card">
+      <p class="quote">
+“Choosing DataFil was the best decision I made for medical school. Beyond academics, I received the guidance and support I needed every step of the way. Having a team of doctors and staff here in the Philippines who genuinely care about my success has made all the difference.”
+      </p>
+      <img src="image/testimonial2.png" alt="Dr. Shivangi Dahiya">
+      <h3>Dr. Shivangi Dahiya, M.D.</h3>
+    </div>
+
+    <!-- Testimonial 3 -->
+    <div class="testimonial-card">
+      <p class="quote">
+“DATAFIL has supported me every semester with the study materials and resources I needed to succeed. Being far from home isn’t easy, but having their team here in the Philippines gave me the mentorship and guidance I needed, making me feel truly cared for every step of the way.”
+      </p>
+      <img src="image/testimonial3.png" alt="Samir Limbu">
+      <h3>Samir Limbu</h3>
+    </div>
+
+    <!-- Testimonial 4 -->
+    <div class="testimonial-card">
+      <p class="quote">
+“My clinical rotation in the United States truly helped me discover my future specialty and gave me valuable hands‑on experience within the U.S. healthcare system. It was a key step in shaping my career path and gave me the confidence to successfully pursue medical practice in the USA.”
+      </p>
+      <img src="image/testimonial4.png" alt="Dr. Juan-Miguel Somera III">
+      <h3>Dr. Juan Somera, M.D.</h3>
+    </div>
+
+  </div>
+</section>
+
+
+<section class="partners-section">
+  <h2 class="partners-title">OUR PARTNERS</h2>
+  <div class="partners-container">
+    
+    <a href="https://www.perpetualdalta.edu.ph/" target="_blank" class="partner-logo">
+      <img src="image/partner1.png" alt="Partner 1 Logo">
+    </a>
+
+    <a href="https://www.globaleducc.com/" target="_blank" class="partner-logo">
+      <img src="image/partner2.png" alt="Partner 2 Logo">
+    </a>
+
+    <a href="https://www.medstarhealth.org/" target="_blank" class="partner-logo">
+      <img src="image/partner3.jpg" alt="Partner 3 Logo">
+    </a>
+
+    <a href="https://www.jacksonparkhospital.org/" target="_blank" class="partner-logo">
+      <img src="image/partner4.png" alt="Partner 4 Logo">
+    </a>
+
+  </div>
+</section>
+
+<div class="contact-page">
+    <div class="form-wrapper">
+      <h2>Connect With Us</h2>
+      <form class="contact-form" action="https://formsubmit.co/datafilusa@gmail.com" method="POST">
+        <!-- ✅ Hidden fields for FormSubmit configuration -->
+  
+        <!-- 🔧 IMPORTANT: Replace "yourusername" and "your-repo-name" below with your actual GitHub username and repository name once your site is ready -->
+    <input type="hidden" name="_next" value="https://datafil-va.com/thank-you.html">
+  
+        <input type="hidden" name="_autoresponse" value="Thank you for contacting DataFil. We'll get back to you as soon as possible!">
+        <input type="hidden" name="_captcha" value="false" />
+        <input type="hidden" name="name" value="DataFil Inquiry" />
+  
+        <!-- 👇 Visible form fields -->
+        <div class="form-group">
+          <input type="text" name="firstname" placeholder="First Name *" required />
+          <input type="text" name="lastname" placeholder="Last Name *" required />
+        </div>
+        <div class="form-group">
+          <input type="email" name="email" placeholder="Email *" required />
+          <input type="tel" name="phone" placeholder="Phone Number (optional)" />
+        </div>
+  
+        <div class="form-group">
+          <textarea name="message" placeholder="Message *" required></textarea>
+        </div>
+  
+        <div class="form-submit">
+          <button type="submit">SEND</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+
+
+
+<div class="footer">
+  <div class="footer-top">
+    <span>&copy; 2025 DataFil.us All rights reserved</span>
+    <span class="privacypolicy">Privacy Policy</span>
+  </div>
+  <div class="footer-bottom">
+    <a href="contactus.html" class="footer-contact-btn">Contact Us</a>
+    <a href="https://www.facebook.com/DataFilUSA/" target="_blank">
+      <img src="image/fb-icon2.png" class="footer-icon" alt="Facebook">
+    </a>
+    <a href="https://www.instagram.com/datafilusa/" target="_blank">
+      <img src="image/ig-icon2.png" class="footer-icon" alt="Instagram">
+    </a>
+    <a href="https://twitter.com/DataFilUSA" target="_blank">
+      <img src="image/x-icon2.png" class="footer-icon" alt="Twitter">
+    </a>
+  </div>
+</div>
+
+
+
+
+
+</body>
+
+
+</html>
+
+
+
+

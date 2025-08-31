@@ -1,0 +1,391 @@
+/* ========================== */
+/* RESET & BASE */
+/* ========================== */
+* {
+  box-sizing: border-box;
+}
+body, html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Open Sans', sans-serif;
+  background: #f9f9f9;
+  color: #222;
+}
+
+.navbar {
+  margin: 0;
+  padding: 0;
+  height: var(--navbar-height);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+a {
+  text-decoration: none;
+  color: #2d2d62;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  min-height: auto;
+  padding: 250px 20px 0 20px;
+}
+
+/* ========================== */
+/* PROFILE PAGE */
+/* ========================== */
+.profile-page {
+  position: relative;
+  display: none;
+  opacity: 0;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.4s ease;
+  background: white;
+  border-radius: 8px;
+  padding: 40px 50px;
+  box-shadow: none;
+  margin-bottom: 0;
+  min-height: 500px;
+}
+.profile-page.show {
+  display: block;
+  opacity: 1;
+}
+.profile-page h1 {
+  color: #2d2d62;
+  margin-bottom: 25px;
+  font-weight: 700;
+  letter-spacing: 1.3px;
+  text-align: center;
+}
+.profile-header {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  margin-bottom: 30px;
+}
+.profile-picture img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 4px solid #2d2d62;
+  object-fit: cover;
+}
+.profile-info h2 {
+  margin: 0 0 6px;
+  color: #2d2d62;
+  font-weight: 700;
+  font-size: 28px;
+}
+.profile-info p {
+  margin: 3px 0;
+  font-size: 16px;
+  color: #555;
+}
+
+/* ========================== */
+/* LOGOUT BUTTON */
+/* ========================== */
+#logoutBtn {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #2d2d62;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s, color 0.3s;
+  z-index: 10;
+}
+#logoutBtn:hover {
+  background-color: #fad02c;
+  color: #2d2d62;
+}
+
+/* ========================== */
+/* FOOTER LOGOS */
+.footer-logos {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  font-size: 13px;
+  color: #777;
+}
+.footer-logos img {
+  object-fit: contain;
+  height: 60px;
+}
+
+/* ========================== */
+/* GRADES, PAYMENTS, ATTENDANCE */
+/* ========================== */
+.grades-section h3,
+.payments-section h3,
+.attendance-section h3 {
+  color: #2d2d62;
+  border-left: 5px solid #fad02c;
+  padding-left: 10px;
+  margin-bottom: 15px;
+  font-weight: 700;
+  font-size: 22px;
+}
+
+.grades-section table,
+.payments-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 30px;
+}
+
+.grades-section th,
+.grades-section td,
+.payments-table th,
+.payments-table td {
+  border: 1px solid #ddd;
+  padding: 12px 10px;
+  text-align: center;
+  font-size: 15px;
+}
+
+.grades-section th,
+.payments-table th {
+  background-color: #2d2d62;
+  color: #fad02c;
+  font-weight: 700;
+}
+
+.grades-section tbody tr:nth-child(odd),
+.payments-table tbody tr:nth-child(odd) {
+  background-color: #f9f9f9;
+}
+
+.payments-attendance {
+  display: flex;
+  gap: 60px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.payments-section,
+.attendance-section {
+  flex: 1 1 45%;
+  background: #fafafa;
+  padding: 20px 25px;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+}
+.payments-section p,
+.attendance-section p,
+.payments-section ul,
+.attendance-section ul {
+  margin-top: 0;
+  font-size: 15px;
+  color: #2d2d62;
+  font-weight: 700;
+}
+.attendance-section ul,
+.payments-section ul {
+  padding-left: 18px;
+}
+.attendance-section li.absent {
+  color: #fad02c;
+  font-weight: 700;
+}
+
+/* ========================== */
+/* BUTTONS */
+/* ========================== */
+.grades-button,
+.payments-button {
+  background-color: #2d2d62;
+  color:white;
+  border: none;
+  padding: 8px 16px;
+  font-size: 16px;
+  font-weight: 700;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 10px 0 15px 0;
+}
+.grades-button:hover,
+.payments-button:hover {
+  background-color: #fad02c;
+  color: #2d2d62;
+}
+
+.payments-table {
+  display: none;
+  margin-top: 15px;
+}
+
+/* ========================== */
+/* MINIMALISTIC HOVER ZOOM EFFECT */
+.login-box,
+.profile-page {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.login-box:hover,
+.profile-page:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 10px 28px rgba(45, 45, 98, 0.14);
+}
+
+/* ========================== */
+/* CONTACT ADMIN LINK HOVER EFFECT */
+.contact-admin-link {
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.contact-admin-link:hover {
+  text-decoration: underline;
+}
+
+/* ========================== */
+/* SEMESTER DROPDOWN */
+/* ========================== */
+.semester-selector {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-bottom: 20px;
+  gap: 8px;
+  position: relative;
+}
+.semester-selector label {
+  font-weight: 600;
+  color: #2d2d62;
+}
+.semester-selector select {
+  padding: 8px 40px 8px 12px;
+  font-size: 16px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  background: #fff;
+  color: #2d2d62;
+  font-weight: 600;
+  appearance: none;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+}
+
+.semester-selector::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 30px;
+  height: 100%;
+  background-color: #2d2d62;
+  border-radius: 0 6px 6px 0;
+  pointer-events: none;
+  z-index: 1;
+}
+.semester-selector:hover::after {
+  background-color: #fad02c;
+}
+.semester-selector::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 12px;
+  width: 6px;
+  height: 6px;
+  border-left: 2px solid white;
+  border-bottom: 2px solid white;
+  transform: translateY(-50%) rotate(-45deg);
+  pointer-events: none;
+  z-index: 2;
+}
+.semester-selector:hover::before {
+  border-left: 2px solid #2d2d62;
+  border-bottom: 2px solid #2d2d62;
+}
+.semester-selector select:focus {
+  outline: none;
+  border-color: #2d2d62;
+}
+
+.semester-content {
+  display: none;
+  margin-bottom: 30px;
+}
+
+/* ========================== */
+/* RESPONSIVE FIXES */
+/* ========================== */
+@media (max-width: 700px) {
+  .profile-header {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    text-align: center;
+  }
+  .profile-picture img {
+    width: 120px;
+    height: 120px;
+    border-width: 3px;
+  }
+  .profile-info h2 {
+    font-size: 22px;
+  }
+  .profile-info p {
+    font-size: 14px;
+  }
+  .semester-selector {
+    justify-content: center;
+    width: 100%;
+  }
+  .semester-selector select {
+    width: 100%;
+    max-width: 300px;
+  }
+  .payments-attendance {
+    flex-direction: column;
+  }
+  .payments-section,
+  .attendance-section {
+    flex: 1 1 100%;
+  }
+  #logoutBtn {
+    bottom: 15px;
+    padding: 8px 18px;
+  }
+  .footer-logos img {
+    height: 50px;
+  }
+  .grades-section table,
+  .payments-section,
+  .attendance-section {
+    overflow-x: auto;
+  }
+}
+
+@media (max-width: 400px) {
+  .profile-page {
+    padding: 30px 20px;
+  }
+  .profile-info h2 {
+    font-size: 20px;
+  }
+  .profile-info p {
+    font-size: 13px;
+  }
+  .semester-selector select {
+    font-size: 14px;
+    padding: 6px 12px;
+  }
+}
