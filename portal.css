@@ -461,6 +461,7 @@ a {
 
 
 @media (max-width: 500px) {
+  /* Profile page adjustments */
   .profile-page {
     padding: 30px 20px;
   }
@@ -482,42 +483,51 @@ a {
     padding: 6px 12px;
   }
 
-  /* Reduce font size of latest exam preview */
+  /* Latest exam preview */
   .latest-exam-preview {
-    font-size: 12px; /* smaller font under 500px */
+    font-size: 12px;
   }
-
   .latest-exam-left,
   .latest-exam-right {
-    font-size: 12px; /* ensure both sides shrink */
+    font-size: 12px;
   }
 
   /* Center latest exam container and grades table inside section card */
-  .grades-section .latest-exam-container,
-  .grades-section .grade-table {
-    margin-left: auto;
-    margin-right: auto;
-    display: block;       /* ensures margins work */
-    max-width: 100%;      /* prevent overflow on very small screens */
+  .grades-section {
+    text-align: center; /* center inline-table children */
   }
 
-  /* Optional: shrink latest exam preview text */
   .grades-section .latest-exam-container {
-    font-size: 12px; /* smaller text for mobile */
+    display: inline-block; /* shrink to content width */
+    text-align: left;      /* keep inner text aligned left */
+    font-size: 12px;
+    margin: 10px auto;
+  }
+
+  .grades-section .grade-table {
+    display: inline-table; /* allow parent text-align to center table */
+    text-align: left;      /* keep cell content left-aligned */
+    width: auto;           /* shrink to content width */
+    max-width: 100%;       /* prevent overflow */
+    margin: 10px auto;     /* center in container */
   }
 
   /* Center the View/Hide Grades button */
   .grades-section .grades-button {
     display: block;
-    margin: 10px auto; /* auto left/right centers the button */
+    margin: 10px auto;
     text-align: center;
   }
 
-  /* Center the View/Hide Attendance button */
+  /* Center attendance and payments buttons */
+  .payments-section,
+  .attendance-section {
+    text-align: center; /* center inline buttons inside */
+  }
+
   .payments-section .payments-button,
   .attendance-section .payments-button {
-    display: block;
-    margin: 10px auto; /* auto left/right centers the button */
-    text-align: center;
+    display: inline-block; /* shrink to natural size */
+    margin: 10px auto;     /* center horizontally */
   }
 }
