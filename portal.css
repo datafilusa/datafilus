@@ -504,13 +504,13 @@ a {
     margin: 10px auto;
   }
 
-  .grades-section .grade-table {
-    display: inline-table; /* allow parent text-align to center table */
-    text-align: left;      /* keep cell content left-aligned */
-    width: auto;           /* shrink to content width */
-    max-width: 100%;       /* prevent overflow */
-    margin: 10px auto;     /* center in container */
-  }
+ .grades-section .grade-table {
+    display: table !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    width: auto !important;
+}
+
 
   /* Center the View/Hide Grades button */
   .grades-section .grades-button {
