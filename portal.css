@@ -412,6 +412,41 @@ a {
   }
 }
 
+
+
+
+@media (max-width: 600px) {
+  .profile-page,
+  .grades-section,
+  .payments-section,
+  .attendance-section {
+    max-width: 95%;        /* shrink card to fit mobile */
+    margin: 0 auto;        /* center horizontally */
+    padding: 12px;         /* add breathing space */
+    font-size: 13px;       /* smaller text across whole card */
+  }
+
+  .profile-page h2,
+  .profile-page h3,
+  .grades-section h3,
+  .payments-section h3,
+  .attendance-section h3 {
+    font-size: 15px;       /* shrink headings */
+  }
+
+  .profile-page p,
+  .grades-section p,
+  .payments-section p,
+  .attendance-section p,
+  .grades-section td,
+  .grades-section th,
+  .payments-section td,
+  .payments-section th {
+    font-size: 12px;       /* shrink normal text & table content */
+  }
+}
+
+
 @media (max-width: 400px) {
   .profile-page {
     padding: 30px 20px;
