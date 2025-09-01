@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
         { subject: "Physiology", prelim: 88, midterm: 84, final: 85, cumulative: 86 },
         { subject: "Biochemistry", prelim: 85, midterm: 80, final: 95, cumulative: 96 },
         { subject: "Bioethics", prelim: 80, midterm: 97, final: 92, cumulative: 91 },
-        { subject: "Community Medicine", prelim: 77, midterm: 81, final: 88, cumulative: 83 }
+        { subject: "FMCH", prelim: 77, midterm: 81, final: 88, cumulative: 83 }
       ],
       "sy2025-2": [
         { subject: "Pathology", prelim: 88, midterm: 85, final: 87, cumulative: 87 },
@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
       "sy2025-3": [
         { subject: "Gynecology", prelim: 82, midterm: 84, final: 85, cumulative: 84 },
         { subject: "Pharmacology", prelim: 79, midterm: 81, final: 80, cumulative: 80 },
-        { subject: "Community Medicine", prelim: 95, midterm: 92, final: 89, cumulative: 91 },
+        { subject: "FMCH", prelim: 95, midterm: 92, final: 89, cumulative: 91 },
         { subject: "Microbiology", prelim: 88, midterm: 90, final: 87, cumulative: 88 },
         { subject: "Anatomy", prelim: 96, midterm: 89, final: 95, cumulative: 93 },
       ],
@@ -173,9 +173,9 @@ document.addEventListener('DOMContentLoaded', () => {
   semesters.reverse();
 
   const subjectsBySemester = {
-    "sy2025-1": ["Anatomy", "Physiology", "Biochemistry", "Bioethics", "Community Medicine"],
+    "sy2025-1": ["Anatomy", "Physiology", "Biochemistry", "Bioethics", "FMCH"],
     "sy2025-2": ["Pathology", "Genetics", "Psychiatry", "Microbiology", "Histology"],
-    "sy2025-3": ["Gynecology", "Pharmacology", "Community Medicine", "Microbiology", "Anatomy"]
+    "sy2025-3": ["Gynecology", "Pharmacology", "FMCH", "Microbiology", "Anatomy"]
   };
 
   let alwaysShowGrades = false;

@@ -96,6 +96,10 @@ a {
 /* LOGOUT BUTTON */
 /* ========================== */
 #logoutBtn {
+
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
   background-color: #2d2d62;
   color: white;
   border: none;
@@ -105,10 +109,15 @@ a {
   font-weight: 600;
   transition: background-color 0.3s, color 0.3s;
   z-index: 10;
-  margin-top: 20px;  /* ✅ ensures space between buttons */
-  display: block;
-  position: relative;
+
+  margin-top: 20px;     /* push it down */
+  display: block;       /* ensures it takes its own line */
+  position: relative;   /* remove absolute overlap if not needed */
 }
+
+
+
+
 #logoutBtn:hover {
   background-color: #fad02c;
   color: #2d2d62;
@@ -284,6 +293,7 @@ a {
   position: relative;
   z-index: 0;
 }
+
 .semester-selector::after {
   content: '';
   position: absolute;
@@ -326,52 +336,43 @@ a {
   margin-bottom: 30px;
 }
 
-/* ========================== */
-/* RESPONSIVE FIXES */
-/* ========================== */
 @media (max-width: 768px) {
   .container {
-    margin-top: 10% !important;
-    padding-top: 60px;
+    margin-top: 10% !important;   /* kill big gap */
+    padding-top: 60px;            /* same as navbar height */
   }
 
   .footer-logos span {
     font-size: 12px;
     text-align: center;
-    white-space: pre-line;
+    white-space: pre-line; /* allow line breaks */
   }
 
   .footer-logos img {
     max-height: 50px !important;
     width: auto !important;
     display: block;
-    margin: 0 auto;
+    margin: 0 auto;      /* center the logo */
   }
 
   .grade-table {
-    width: 100% !important;
+    width: 100% !important;   /* force fit */
     max-width: 100% !important;
-    font-size: 13px;
+    font-size: 13px;          /* optional slight shrink */
   }
 
   .grade-table th,
   .grade-table td {
-    padding: 6px 4px;
-    white-space: nowrap;
-  }
-
-  .profile-page,
-  .grades-section,
-  .payments-section,
-  .attendance-section {
-    width: 95% !important;   /* ✅ make cards wider */
-    max-width: 100%;
-    margin: 0 auto;
-    padding: 15px;
-    font-size: 13px;
+    padding: 6px 4px;         /* tighter padding */
+    white-space: nowrap;      /* prevent wrapping */
   }
 }
 
+
+
+/* ========================== */
+/* RESPONSIVE FIXES */
+/* ========================== */
 @media (max-width: 700px) {
   .profile-header {
     flex-direction: column;
@@ -406,22 +407,42 @@ a {
     flex: 1 1 100%;
   }
   #logoutBtn {
+    bottom: 15px;
     padding: 8px 18px;
   }
   .footer-logos img {
     height: 50px;
   }
+  .grades-section table,
+  .payments-section,
+  .attendance-section {
+    overflow-x: auto;
+  }
+
+ .semester-selector label {
+  font-size: 14px; 
 }
+
+.semester-selector select {
+  font-size: 14px;   /* smaller dropdown text */
+  padding: 6px 32px 6px 10px; /* shrink padding so text+arrow fit better */
+}
+
+
+}
+
+
+
 
 @media (max-width: 600px) {
   .profile-page,
   .grades-section,
   .payments-section,
   .attendance-section {
-    width: 95%;
-    margin: 0 auto;
-    padding: 12px;
-    font-size: 12px;
+    max-width: 95%;        /* shrink card to fit mobile */
+    margin: 0 auto;        /* center horizontally */
+    padding: 12px;         /* add breathing space */
+    font-size: 13px;       /* smaller text across whole card */
   }
 
   .profile-page h2,
@@ -429,7 +450,7 @@ a {
   .grades-section h3,
   .payments-section h3,
   .attendance-section h3 {
-    font-size: 15px;
+    font-size: 15px;       /* shrink headings */
   }
 
   .profile-page p,
@@ -440,9 +461,10 @@ a {
   .grades-section th,
   .payments-section td,
   .payments-section th {
-    font-size: 12px;
+    font-size: 12px;       /* shrink normal text & table content */
   }
 }
+
 
 @media (max-width: 400px) {
   .profile-page {
