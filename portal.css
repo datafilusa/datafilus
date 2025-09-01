@@ -328,6 +328,40 @@ a {
   margin-bottom: 30px;
 }
 
+@media (max-width: 768px) {
+  .container {
+    margin-top: 10% !important;   /* kill big gap */
+    padding-top: 60px;            /* same as navbar height */
+  }
+
+  .footer-logos span {
+    font-size: 12px;
+    text-align: center;
+    white-space: pre-line; /* allow line breaks */
+  }
+
+  .footer-logos img {
+    max-height: 50px !important;
+    width: auto !important;
+    display: block;
+    margin: 0 auto;      /* center the logo */
+  }
+
+  .grade-table {
+    width: 100% !important;   /* force fit */
+    max-width: 100% !important;
+    font-size: 13px;          /* optional slight shrink */
+  }
+
+  .grade-table th,
+  .grade-table td {
+    padding: 6px 4px;         /* tighter padding */
+    white-space: nowrap;      /* prevent wrapping */
+  }
+}
+
+
+
 /* ========================== */
 /* RESPONSIVE FIXES */
 /* ========================== */
