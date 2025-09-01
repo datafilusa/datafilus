@@ -464,9 +464,11 @@ a {
   .profile-page {
     padding: 30px 20px;
   }
+
   .profile-info h2 {
     font-size: 20px;
   }
+
   .profile-info p {
     font-size: 13px;
   }
@@ -481,18 +483,22 @@ a {
   }
 
   /* Reduce font size of latest exam preview */
-.latest-exam-preview {
-  font-size: 12px; /* smaller font under 500px */
-}
-.latest-exam-left,
-.latest-exam-right {
-  font-size: 12px; /* ensure both sides shrink */
-}
+  .latest-exam-preview {
+    font-size: 12px; /* smaller font under 500px */
+  }
 
+  .latest-exam-left,
+  .latest-exam-right {
+    font-size: 12px; /* ensure both sides shrink */
+  }
 
-.grades-section .grade-table {
-    margin-left: -10px; /* adjust as needed */
-    margin-right: auto; /* keeps it aligned properly */
+  /* Center latest exam container and grades table inside section card */
+  .grades-section .latest-exam-container,
+  .grades-section .grade-table {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;       /* ensures margins work */
+    max-width: 100%;      /* prevent overflow on very small screens */
   }
 
   /* Optional: shrink latest exam preview text */
@@ -500,13 +506,18 @@ a {
     font-size: 12px; /* smaller text for mobile */
   }
 
-    /* Center the View/Hide Grades button */
+  /* Center the View/Hide Grades button */
   .grades-section .grades-button {
     display: block;
     margin: 10px auto; /* auto left/right centers the button */
     text-align: center;
   }
+
+  /* Center the View/Hide Attendance button */
+  .payments-section .payments-button,
+  .attendance-section .payments-button {
+    display: block;
+    margin: 10px auto; /* auto left/right centers the button */
+    text-align: center;
+  }
 }
-
-
-
