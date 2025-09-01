@@ -24,6 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
       ]
     },
     grades: {
+      // NOTE: we will IGNORE any cumulative values below when rendering
       "sy2025-1": [
         { subject: "Anatomy", prelim: 85, midterm: 87, final: 86, cumulative: 86 },
         { subject: "Physiology", prelim: 88, midterm: 84, final: 85, cumulative: 86 },
@@ -90,9 +91,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const username = usernameInput.value;
     const password = passwordInput.value;
 
-    if(username === 'student' && password === '1234') {
+    if (username === 'student' && password === '1234') {
       errorMessage.style.display = "none";
-      if(rememberCheckbox.checked){
+      if (rememberCheckbox.checked) {
         localStorage.setItem('rememberedUser', username);
         localStorage.setItem('rememberedPass', password);
       } else {
@@ -140,19 +141,21 @@ document.addEventListener('DOMContentLoaded', () => {
   // Password Toggle Eye Icon
   // ==============================
   const togglePassword = document.getElementById('togglePassword');
-  const svg = togglePassword.querySelector('svg');
+  const svg = togglePassword?.querySelector('svg');
   const eyeIcon = `<path d="M12 5c-7 0-11 7-11 7s4 7 11 7 11-7 11-7-4-7-11-7z" fill="none" stroke="#aaa" stroke-width="2"/><circle cx="12" cy="12" r="2.5" fill="none" stroke="#aaa" stroke-width="2"/>`;
   const eyeOffIcon = `<path d="M12 5c-7 0-11 7-11 7s4 7 11 7 11-7 11-7-4-7-11-7z" fill="none" stroke="#aaa" stroke-width="2"/><circle cx="12" cy="12" r="2.5" fill="none" stroke="#aaa" stroke-width="2"/><line x1="7" y1="7" x2="17" y2="17" stroke="#aaa" stroke-width="2" stroke-linecap="round"/>`;
   if (svg) svg.innerHTML = eyeIcon;
-  togglePassword.addEventListener('click', () => {
-    if (passwordInput.type === 'password') {
-      passwordInput.type = 'text';
-      svg.innerHTML = eyeOffIcon;
-    } else {
-      passwordInput.type = 'password';
-      svg.innerHTML = eyeIcon;
-    }
-  });
+  if (togglePassword) {
+    togglePassword.addEventListener('click', () => {
+      if (passwordInput.type === 'password') {
+        passwordInput.type = 'text';
+        if (svg) svg.innerHTML = eyeOffIcon;
+      } else {
+        passwordInput.type = 'password';
+        if (svg) svg.innerHTML = eyeIcon;
+      }
+    });
+  }
 
   // ==============================
   // Semester Dropdown & Data
@@ -161,22 +164,29 @@ document.addEventListener('DOMContentLoaded', () => {
   const semesterContainer = document.getElementById('semesterContainer');
 
   const semesters = [];
-  for(let i = 1; i <= 3; i++) {
-    semesters.push({ 
+  for (let i = 1; i <= 3; i++) {
+    semesters.push({
       id: `sy2025-${i}`,
-      label: `Semester ${i}, SY ${2025 + Math.floor((i-1)/2)}-${2025 + Math.floor((i-1)/2)+1}`
+      label: `Semester ${i}, SY ${2025 + Math.floor((i - 1) / 2)}-${2025 + Math.floor((i - 1) / 2) + 1}`
     });
   }
   semesters.reverse();
 
-const subjectsBySemester = {
-  "sy2025-1": ["Anatomy", "Physiology", "Biochemistry", "Bioethics", "Community Medicine"],
-  "sy2025-2": ["Pathology", "Genetics", "Psychiatry", "Microbiology", "Histology"],
-  "sy2025-3": ["Gynecology", "Pharmacology", "Community Medicine", "Microbiology", "Anatomy"]
-};
-
+  const subjectsBySemester = {
+    "sy2025-1": ["Anatomy", "Physiology", "Biochemistry", "Bioethics", "Community Medicine"],
+    "sy2025-2": ["Pathology", "Genetics", "Psychiatry", "Microbiology", "Histology"],
+    "sy2025-3": ["Gynecology", "Pharmacology", "Community Medicine", "Microbiology", "Anatomy"]
+  };
 
   let alwaysShowGrades = false;
+
+  // Helper: latest available score (Final → Midterm → Prelim)
+  const latestScore = (g) => {
+    if (typeof g.final === 'number') return { label: 'Final', value: g.final };
+    if (typeof g.midterm === 'number') return { label: 'Midterm', value: g.midterm };
+    if (typeof g.prelim === 'number') return { label: 'Prelim', value: g.prelim };
+    return { label: 'N/A', value: 'N/A' };
+  };
 
   // ==============================
   // Generate Semester Sections
@@ -188,8 +198,9 @@ const subjectsBySemester = {
     semesterDropdown.appendChild(option);
 
     const div = document.createElement('div');
+    // add section-card so your mobile CSS applies
     div.id = sem.id;
-    div.className = 'semester-info';
+    div.className = 'semester-info section-card';
     div.style.display = 'none';
 
     // ===== GRADES =====
@@ -201,16 +212,26 @@ const subjectsBySemester = {
     gradesButton.textContent = 'View All Grades';
     gradesSection.appendChild(gradesButton);
 
-    // Latest Exam Preview
+    // Latest Exam Preview (NO cumulative)
     const previewDiv = document.createElement('div');
     previewDiv.className = 'latest-exam-preview';
-    const semesterGrades = studentProfile.grades[sem.id] || [];
+    const rawSemGrades = studentProfile.grades[sem.id] || [];
+
+    // sanitize: drop cumulative field entirely
+    const semesterGrades = rawSemGrades.map(g => ({
+      subject: g.subject,
+      prelim: g.prelim,
+      midterm: g.midterm,
+      final: g.final
+    }));
+
     if (semesterGrades.length > 0) {
-      const latestExam = semesterGrades[semesterGrades.length - 1];
+      const latest = semesterGrades[semesterGrades.length - 1];
+      const l = latestScore(latest);
       previewDiv.innerHTML = `
         <div class="latest-exam-container">
           <div class="latest-exam-left">Latest Exam Grade</div>
-          <div class="latest-exam-right">${latestExam.subject}: ${latestExam.cumulative}</div>
+          <div class="latest-exam-right">${latest.subject} (${l.label}): ${l.value}</div>
         </div>
       `;
     } else {
@@ -223,30 +244,42 @@ const subjectsBySemester = {
     }
     gradesSection.appendChild(previewDiv);
 
-    // Full Grades Table
+    // Full Grades Table (NO cumulative) + add class "grade-table"
     const table = document.createElement('table');
+    table.className = 'grade-table';
     table.style.display = 'none';
-    table.innerHTML = `<thead><tr><th>Subject</th><th>Prelim</th><th>Midterm</th><th>Final</th><th>Cumulative</th></tr></thead><tbody>`;
-    (subjectsBySemester[sem.id] || []).forEach(subject => {
-      const grade = (studentProfile.grades[sem.id] || []).find(g => g.subject === subject) || {};
-      table.innerHTML += `<tr>
-        <td>${subject}</td>
-        <td>${grade.prelim ?? "N/A"}</td>
-        <td>${grade.midterm ?? "N/A"}</td>
-        <td>${grade.final ?? "N/A"}</td>
-        <td>${grade.cumulative ?? "N/A"}</td>
-      </tr>`;
-    });
-    table.innerHTML += `</tbody>`;
-    gradesSection.appendChild(table);
+    table.innerHTML = `
+      <thead>
+        <tr>
+          <th>Subject</th>
+          <th>Prelim</th>
+          <th>Midterm</th>
+          <th>Final</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    `;
 
+    const tbody = table.querySelector('tbody');
+    (subjectsBySemester[sem.id] || []).forEach(subject => {
+      const grade = semesterGrades.find(g => g.subject === subject) || {};
+      const tr = document.createElement('tr');
+      tr.innerHTML = `
+        <td>${subject}</td>
+        <td>${(grade.prelim ?? "N/A")}</td>
+        <td>${(grade.midterm ?? "N/A")}</td>
+        <td>${(grade.final ?? "N/A")}</td>
+      `;
+      tbody.appendChild(tr);
+    });
+
+    gradesSection.appendChild(table);
     div.appendChild(gradesSection);
 
     // ===== PAYMENTS =====
     const paymentsSection = document.createElement('section');
     paymentsSection.className = 'payments-section';
 
-    // Payments Title with yellow line
     const paymentsTitle = document.createElement('h3');
     paymentsTitle.textContent = "Payments";
     paymentsTitle.style.borderLeft = "4px solid #FFD700";
@@ -272,7 +305,6 @@ const subjectsBySemester = {
     paymentsButton.textContent = 'View Payments';
     paymentsSection.appendChild(paymentsButton);
 
-    // Professional Payments Table
     const paymentsTable = document.createElement('table');
     paymentsTable.style.display = 'none';
     paymentsTable.style.width = '100%';
@@ -291,7 +323,6 @@ const subjectsBySemester = {
       </tr>`;
     });
 
-    // Total Paid Row
     paymentsTable.innerHTML += `<tr style="font-weight:bold; border-top:2px solid #ccc;">
       <td style="padding:6px 0;">Total Paid</td>
       <td style="text-align:right; padding:6px 0;">$${paid}</td>
@@ -299,12 +330,11 @@ const subjectsBySemester = {
     paymentsTable.innerHTML += `</tbody>`;
     paymentsSection.appendChild(paymentsTable);
 
-    // Row hover effect
     paymentsTable.addEventListener('mouseover', e => {
-      if(e.target.tagName === 'TD') e.target.parentElement.style.background = '#f9f9f9';
+      if (e.target.tagName === 'TD') e.target.parentElement.style.background = '#f9f9f9';
     });
     paymentsTable.addEventListener('mouseout', e => {
-      if(e.target.tagName === 'TD') e.target.parentElement.style.background = 'transparent';
+      if (e.target.tagName === 'TD') e.target.parentElement.style.background = 'transparent';
     });
 
     // ===== ATTENDANCE =====
@@ -326,11 +356,10 @@ const subjectsBySemester = {
     attendanceSection.appendChild(attendancePreview);
 
     const attendanceButton = document.createElement('button');
-    attendanceButton.className = 'payments-button'; // same design as payments button
+    attendanceButton.className = 'payments-button';
     attendanceButton.textContent = 'View Full Attendance';
     attendanceSection.appendChild(attendanceButton);
 
-    // Attendance Table
     const attendanceTable = document.createElement('table');
     attendanceTable.style.display = 'none';
     attendanceTable.style.width = '100%';
@@ -352,12 +381,11 @@ const subjectsBySemester = {
     attendanceTable.innerHTML += `</tbody>`;
     attendanceSection.appendChild(attendanceTable);
 
-    // Hover effect
     attendanceTable.addEventListener('mouseover', e => {
-      if(e.target.tagName === 'TD') e.target.parentElement.style.background = '#f9f9f9';
+      if (e.target.tagName === 'TD') e.target.parentElement.style.background = '#f9f9f9';
     });
     attendanceTable.addEventListener('mouseout', e => {
-      if(e.target.tagName === 'TD') e.target.parentElement.style.background = 'transparent';
+      if (e.target.tagName === 'TD') e.target.parentElement.style.background = 'transparent';
     });
 
     // ===== Wrap Payments + Attendance =====
@@ -394,18 +422,18 @@ const subjectsBySemester = {
       }
     }
 
-    // Payments
+    // Payments + Attendance (reuse same class styling)
     if (e.target.classList.contains('payments-button')) {
       const button = e.target;
       const section = button.closest('section');
       const table = section.querySelector('table');
       if (button.textContent === 'View Payments' || button.textContent === 'View Full Attendance') {
         table.style.display = 'table';
-        if(button.textContent === 'View Payments') button.textContent = 'Hide Payments';
+        if (button.textContent === 'View Payments') button.textContent = 'Hide Payments';
         else button.textContent = 'Hide Attendance';
       } else {
         table.style.display = 'none';
-        if(button.textContent === 'Hide Payments') button.textContent = 'View Payments';
+        if (button.textContent === 'Hide Payments') button.textContent = 'View Payments';
         else button.textContent = 'View Full Attendance';
       }
     }
@@ -440,10 +468,11 @@ const subjectsBySemester = {
   // ==============================
   // Initialize
   // ==============================
-  if (semesterDropdown) {
+  const semesterDropdownEl = semesterDropdown;
+  if (semesterDropdownEl) {
     showSemester(semesters[0].id);
-    semesterDropdown.value = semesters[0].id;
-    semesterDropdown.addEventListener('change', e => showSemester(e.target.value));
+    semesterDropdownEl.value = semesters[0].id;
+    semesterDropdownEl.addEventListener('change', e => showSemester(e.target.value));
   }
 
 });
