@@ -373,7 +373,7 @@ a {
 /* ========================== */
 /* RESPONSIVE FIXES */
 /* ========================== */
-@media (max-width: 700px) {
+@media (max-width: 900px) {
   .profile-header {
     flex-direction: column;
     align-items: center;
@@ -420,14 +420,8 @@ a {
   }
 
  .semester-selector label {
-  font-size: 14px; 
+  font-size: 14px; /* smaller label text */
 }
-
-.semester-selector select {
-  font-size: 14px;   /* smaller dropdown text */
-  padding: 6px 32px 6px 10px; /* shrink padding so text+arrow fit better */
-}
-
 
 }
 
@@ -466,7 +460,7 @@ a {
 }
 
 
-@media (max-width: 400px) {
+@media (max-width: 500px) {
   .profile-page {
     padding: 30px 20px;
   }
@@ -476,8 +470,43 @@ a {
   .profile-info p {
     font-size: 13px;
   }
+  
+  .semester-selector label {
+    font-size: 12px;
+  }
+
   .semester-selector select {
-    font-size: 14px;
+    font-size: 12px;
     padding: 6px 12px;
   }
+
+  /* Reduce font size of latest exam preview */
+.latest-exam-preview {
+  font-size: 12px; /* smaller font under 500px */
 }
+.latest-exam-left,
+.latest-exam-right {
+  font-size: 12px; /* ensure both sides shrink */
+}
+
+
+.grades-section .grade-table {
+    margin-left: -10px; /* adjust as needed */
+    margin-right: auto; /* keeps it aligned properly */
+  }
+
+  /* Optional: shrink latest exam preview text */
+  .grades-section .latest-exam-container {
+    font-size: 12px; /* smaller text for mobile */
+  }
+
+    /* Center the View/Hide Grades button */
+  .grades-section .grades-button {
+    display: block;
+    margin: 10px auto; /* auto left/right centers the button */
+    text-align: center;
+  }
+}
+
+
+
