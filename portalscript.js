@@ -224,14 +224,13 @@ document.addEventListener('DOMContentLoaded', () => {
       midterm: g.midterm,
       final: g.final
     }));
-
     if (semesterGrades.length > 0) {
       const latest = semesterGrades[semesterGrades.length - 1];
       const l = latestScore(latest);
       previewDiv.innerHTML = `
         <div class="latest-exam-container">
           <div class="latest-exam-left">Latest Exam Grade</div>
-          <div class="latest-exam-right">${latest.subject} (${l.label}): ${l.value}</div>
+          <div class="latest-exam-right">${latest.subject}: ${l.value}</div>
         </div>
       `;
     } else {
@@ -242,7 +241,9 @@ document.addEventListener('DOMContentLoaded', () => {
         </div>
       `;
     }
-    gradesSection.appendChild(previewDiv);
+
+gradesSection.appendChild(previewDiv);
+
 
     // Full Grades Table (NO cumulative) + add class "grade-table"
     const table = document.createElement('table');
