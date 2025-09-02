@@ -177,8 +177,6 @@ document.addEventListener('DOMContentLoaded', () => {
     "sy2025-3": ["Gynecology", "Pharmacology", "FMCH", "Microbiology", "Anatomy"]
   };
 
-  let alwaysShowGrades = false;
-
   const latestScore = (g) => {
     if (typeof g.final === 'number') return { label: 'Final', value: g.final };
     if (typeof g.midterm === 'number') return { label: 'Midterm', value: g.midterm };
@@ -292,6 +290,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const paymentsButton = document.createElement('button');
     paymentsButton.className = 'payments-button';
+    paymentsButton.dataset.type = 'payment';
     paymentsButton.textContent = 'View Payments';
     paymentsSection.appendChild(paymentsButton);
 
@@ -305,7 +304,7 @@ document.addEventListener('DOMContentLoaded', () => {
         <th style="text-align:left; padding:6px 0;">Date</th>
         <th style="text-align:right; padding:6px 0;">Amount Paid</th>
       </tr></thead><tbody>`;
-    
+
     payments.forEach((p) => {
       paymentsTable.innerHTML += `<tr style="border-bottom:1px solid #eee; transition: background 0.3s;">
         <td style="padding:6px 0;">${p.date}</td>
@@ -319,13 +318,6 @@ document.addEventListener('DOMContentLoaded', () => {
     </tr>`;
     paymentsTable.innerHTML += `</tbody>`;
     paymentsSection.appendChild(paymentsTable);
-
-    paymentsTable.addEventListener('mouseover', e => {
-      if (e.target.tagName === 'TD') e.target.parentElement.style.background = '#f9f9f9';
-    });
-    paymentsTable.addEventListener('mouseout', e => {
-      if (e.target.tagName === 'TD') e.target.parentElement.style.background = 'transparent';
-    });
 
     // ===== ATTENDANCE =====
     const attendanceSection = document.createElement('section');
@@ -346,6 +338,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const attendanceButton = document.createElement('button');
     attendanceButton.className = 'payments-button';
+    attendanceButton.dataset.type = 'attendance';
     attendanceButton.textContent = 'View Full Attendance';
     attendanceSection.appendChild(attendanceButton);
 
@@ -359,7 +352,7 @@ document.addEventListener('DOMContentLoaded', () => {
         <th style="text-align:left; padding:6px 0;">Date</th>
         <th style="text-align:left; padding:6px 0;">Class / Absent</th>
       </tr></thead><tbody>`;
-    
+
     (studentProfile.attendance[sem.id] || []).forEach(a => {
       attendanceTable.innerHTML += `<tr style="border-bottom:1px solid #eee; transition: background 0.3s;">
         <td style="padding:6px 0;">${a.split(':')[0]}</td>
@@ -370,13 +363,6 @@ document.addEventListener('DOMContentLoaded', () => {
     attendanceTable.innerHTML += `</tbody>`;
     attendanceSection.appendChild(attendanceTable);
 
-    attendanceTable.addEventListener('mouseover', e => {
-      if (e.target.tagName === 'TD') e.target.parentElement.style.background = '#f9f9f9';
-    });
-    attendanceTable.addEventListener('mouseout', e => {
-      if (e.target.tagName === 'TD') e.target.parentElement.style.background = 'transparent';
-    });
-
     const paWrapper = document.createElement('div');
     paWrapper.className = 'payments-attendance';
     paWrapper.appendChild(paymentsSection);
@@ -386,7 +372,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // ==============================
-  // Button Click Events (Grades, Payments, Attendance)
+  // Button Click Events (Grades)
   // ==============================
   document.querySelectorAll('.grades-section').forEach(section => {
     const btn = section.querySelector('.grades-button');
@@ -394,33 +380,28 @@ document.addEventListener('DOMContentLoaded', () => {
     const preview = section.querySelector('.latest-exam-preview');
 
     btn.addEventListener('click', () => {
-      // Corrected iOS behavior: show full table, hide preview when clicked
-      const isTableVisible = table.style.display === 'table';
-      if (!isTableVisible) {
-        table.style.display = 'table';
-        preview.style.display = 'none';
-      } else {
-        table.style.display = 'none';
-        preview.style.display = 'block';
-      }
+      const isVisible = table.style.display === 'table';
+      table.style.display = isVisible ? 'none' : 'table';
+      preview.style.display = isVisible ? 'block' : 'none';
+      btn.textContent = isVisible ? 'View All Grades' : 'Hide Grades';
     });
   });
 
-  document.querySelectorAll('.payments-section').forEach(section => {
-    const btn = section.querySelector('.payments-button');
-    const table = section.querySelector('table');
-
+  // ==============================
+  // Button Click Events (Payments & Attendance)
+  // ==============================
+  document.querySelectorAll('.payments-button').forEach(btn => {
     btn.addEventListener('click', () => {
-      table.style.display = table.style.display === 'table' ? 'none' : 'table';
-    });
-  });
+      const type = btn.dataset.type;
+      let table;
+      if (type === 'payment') table = btn.closest('.payments-section').querySelector('table');
+      if (type === 'attendance') table = btn.closest('.attendance-section').querySelector('table');
 
-  document.querySelectorAll('.attendance-section').forEach(section => {
-    const btn = section.querySelector('.payments-button');
-    const table = section.querySelector('table');
+      const isVisible = table.style.display === 'table';
+      table.style.display = isVisible ? 'none' : 'table';
 
-    btn.addEventListener('click', () => {
-      table.style.display = table.style.display === 'table' ? 'none' : 'table';
+      if (type === 'payment') btn.textContent = isVisible ? 'View Payments' : 'Hide Payments';
+      if (type === 'attendance') btn.textContent = isVisible ? 'View Full Attendance' : 'Hide Attendance';
     });
   });
 
