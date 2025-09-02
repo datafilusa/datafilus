@@ -487,30 +487,42 @@ a {
   .latest-exam-preview {
     font-size: 12px;
   }
+
   .latest-exam-left,
   .latest-exam-right {
     font-size: 12px;
   }
 
-  /* Center latest exam container and grades table inside section card */
+  /* Center latest exam container and grades table */
   .grades-section {
-    text-align: center; /* center inline-table children */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* centers table & preview */
+    text-align: center;
   }
 
   .grades-section .latest-exam-container {
     display: inline-block; /* shrink to content width */
-    text-align: left;      /* keep inner text aligned left */
+    text-align: left;
     font-size: 12px;
     margin: 10px auto;
   }
 
- .grades-section .grade-table {
-    display: table !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-    width: auto !important;
-}
+  .grades-section .grade-table {
+    width: 100%;           /* allow table to scale */
+    max-width: 400px;      /* fits most small screens */
+    margin: 10px auto;     /* center horizontally */
+    table-layout: fixed;    /* prevents long text from stretching table */
+    word-break: break-word; /* break long subject names */
+    border-collapse: collapse;
+  }
 
+  .grades-section .grade-table th,
+  .grades-section .grade-table td {
+    text-align: center;    /* center table content */
+    word-break: break-word;
+    padding: 4px 6px;     /* smaller padding for mobile */
+  }
 
   /* Center the View/Hide Grades button */
   .grades-section .grades-button {
@@ -519,15 +531,46 @@ a {
     text-align: center;
   }
 
-  /* Center attendance and payments buttons */
+  /* Center attendance and payments sections */
   .payments-section,
   .attendance-section {
-    text-align: center; /* center inline buttons inside */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
   }
 
   .payments-section .payments-button,
   .attendance-section .payments-button {
-    display: inline-block; /* shrink to natural size */
-    margin: 10px auto;     /* center horizontally */
+    display: inline-block;
+    margin: 10px auto;
+  }
+
+  .payments-section table,
+  .attendance-section table {
+    width: 100%;
+    max-width: 400px;
+    margin: 10px auto;
+    table-layout: fixed;
+    word-break: break-word;
+    border-collapse: collapse;
+  }
+
+  .payments-section th,
+  .payments-section td,
+  .attendance-section th,
+  .attendance-section td {
+    text-align: center;
+    word-break: break-word;
+    padding: 4px 6px;
+  }
+}
+
+
+@media (max-width: 400px) {
+  .grades-section .grade-table {
+    width: 380px;           /* or whatever width fits */
+    margin-left: -10px;      /* tweak this value to visually center the table */
+    margin-right: auto;      /* keeps it flexible */
   }
 }

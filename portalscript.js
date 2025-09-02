@@ -24,7 +24,6 @@ document.addEventListener('DOMContentLoaded', () => {
       ]
     },
     grades: {
-      // NOTE: we will IGNORE any cumulative values below when rendering
       "sy2025-1": [
         { subject: "Anatomy", prelim: 85, midterm: 87, final: 86, cumulative: 86 },
         { subject: "Physiology", prelim: 88, midterm: 84, final: 85, cumulative: 86 },
@@ -180,7 +179,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   let alwaysShowGrades = false;
 
-  // Helper: latest available score (Final → Midterm → Prelim)
   const latestScore = (g) => {
     if (typeof g.final === 'number') return { label: 'Final', value: g.final };
     if (typeof g.midterm === 'number') return { label: 'Midterm', value: g.midterm };
@@ -198,7 +196,6 @@ document.addEventListener('DOMContentLoaded', () => {
     semesterDropdown.appendChild(option);
 
     const div = document.createElement('div');
-    // add section-card so your mobile CSS applies
     div.id = sem.id;
     div.className = 'semester-info section-card';
     div.style.display = 'none';
@@ -212,12 +209,9 @@ document.addEventListener('DOMContentLoaded', () => {
     gradesButton.textContent = 'View All Grades';
     gradesSection.appendChild(gradesButton);
 
-    // Latest Exam Preview (NO cumulative)
     const previewDiv = document.createElement('div');
     previewDiv.className = 'latest-exam-preview';
     const rawSemGrades = studentProfile.grades[sem.id] || [];
-
-    // sanitize: drop cumulative field entirely
     const semesterGrades = rawSemGrades.map(g => ({
       subject: g.subject,
       prelim: g.prelim,
@@ -242,10 +236,8 @@ document.addEventListener('DOMContentLoaded', () => {
       `;
     }
 
-gradesSection.appendChild(previewDiv);
+    gradesSection.appendChild(previewDiv);
 
-
-    // Full Grades Table (NO cumulative) + add class "grade-table"
     const table = document.createElement('table');
     table.className = 'grade-table';
     table.style.display = 'none';
@@ -260,7 +252,6 @@ gradesSection.appendChild(previewDiv);
       </thead>
       <tbody></tbody>
     `;
-
     const tbody = table.querySelector('tbody');
     (subjectsBySemester[sem.id] || []).forEach(subject => {
       const grade = semesterGrades.find(g => g.subject === subject) || {};
@@ -273,14 +264,12 @@ gradesSection.appendChild(previewDiv);
       `;
       tbody.appendChild(tr);
     });
-
     gradesSection.appendChild(table);
     div.appendChild(gradesSection);
 
     // ===== PAYMENTS =====
     const paymentsSection = document.createElement('section');
     paymentsSection.className = 'payments-section';
-
     const paymentsTitle = document.createElement('h3');
     paymentsTitle.textContent = "Payments";
     paymentsTitle.style.borderLeft = "4px solid #FFD700";
@@ -341,7 +330,6 @@ gradesSection.appendChild(previewDiv);
     // ===== ATTENDANCE =====
     const attendanceSection = document.createElement('section');
     attendanceSection.className = 'attendance-section';
-
     const attendanceTitle = document.createElement('h3');
     attendanceTitle.textContent = "Attendance";
     attendanceTitle.style.borderLeft = "4px solid #FFD700";
@@ -389,91 +377,67 @@ gradesSection.appendChild(previewDiv);
       if (e.target.tagName === 'TD') e.target.parentElement.style.background = 'transparent';
     });
 
-    // ===== Wrap Payments + Attendance =====
     const paWrapper = document.createElement('div');
     paWrapper.className = 'payments-attendance';
     paWrapper.appendChild(paymentsSection);
     paWrapper.appendChild(attendanceSection);
-
     div.appendChild(paWrapper);
     semesterContainer.appendChild(div);
   });
 
   // ==============================
-  // Button Click Events
+  // Button Click Events (Grades, Payments, Attendance)
   // ==============================
-  document.addEventListener('click', e => {
-    // Grades
-    if (e.target.classList.contains('grades-button')) {
-      const button = e.target;
-      const gradesSection = button.closest('.grades-section');
-      const table = gradesSection.querySelector('table');
-      const previewDiv = gradesSection.querySelector('.latest-exam-preview');
+  document.querySelectorAll('.grades-section').forEach(section => {
+    const btn = section.querySelector('.grades-button');
+    const table = section.querySelector('.grade-table');
+    const preview = section.querySelector('.latest-exam-preview');
 
-      if (button.textContent === 'View All Grades') {
-        alwaysShowGrades = true;
+    btn.addEventListener('click', () => {
+      // Corrected iOS behavior: show full table, hide preview when clicked
+      const isTableVisible = table.style.display === 'table';
+      if (!isTableVisible) {
         table.style.display = 'table';
-        previewDiv.style.display = 'none';
-        button.textContent = 'Hide Grades';
-      } else {
-        alwaysShowGrades = false;
-        document.querySelectorAll('.grades-section table').forEach(t => t.style.display = 'none');
-        document.querySelectorAll('.grades-section .latest-exam-preview').forEach(p => p.style.display = 'block');
-        document.querySelectorAll('.grades-button').forEach(b => b.textContent = 'View All Grades');
-      }
-    }
-
-    // Payments + Attendance (reuse same class styling)
-    if (e.target.classList.contains('payments-button')) {
-      const button = e.target;
-      const section = button.closest('section');
-      const table = section.querySelector('table');
-      if (button.textContent === 'View Payments' || button.textContent === 'View Full Attendance') {
-        table.style.display = 'table';
-        if (button.textContent === 'View Payments') button.textContent = 'Hide Payments';
-        else button.textContent = 'Hide Attendance';
+        preview.style.display = 'none';
       } else {
         table.style.display = 'none';
-        if (button.textContent === 'Hide Payments') button.textContent = 'View Payments';
-        else button.textContent = 'View Full Attendance';
+        preview.style.display = 'block';
       }
-    }
+    });
+  });
+
+  document.querySelectorAll('.payments-section').forEach(section => {
+    const btn = section.querySelector('.payments-button');
+    const table = section.querySelector('table');
+
+    btn.addEventListener('click', () => {
+      table.style.display = table.style.display === 'table' ? 'none' : 'table';
+    });
+  });
+
+  document.querySelectorAll('.attendance-section').forEach(section => {
+    const btn = section.querySelector('.payments-button');
+    const table = section.querySelector('table');
+
+    btn.addEventListener('click', () => {
+      table.style.display = table.style.display === 'table' ? 'none' : 'table';
+    });
   });
 
   // ==============================
-  // Show Selected Semester
+  // Dropdown Change
   // ==============================
-  const showSemester = semesterId => {
-    semesters.forEach(sem => {
-      const div = document.getElementById(sem.id);
-      if (!div) return;
-
-      div.style.display = (sem.id === semesterId) ? 'block' : 'none';
-
-      const table = div.querySelector('.grades-section table');
-      const previewDiv = div.querySelector('.grades-section .latest-exam-preview');
-      const button = div.querySelector('.grades-button');
-
-      if (alwaysShowGrades) {
-        table.style.display = 'table';
-        previewDiv.style.display = 'none';
-        button.textContent = 'Hide Grades';
-      } else {
-        table.style.display = 'none';
-        previewDiv.style.display = 'block';
-        button.textContent = 'View All Grades';
-      }
+  semesterDropdown.addEventListener('change', () => {
+    const selected = semesterDropdown.value;
+    document.querySelectorAll('.semester-info').forEach(div => {
+      div.style.display = div.id === selected ? 'block' : 'none';
     });
-  };
+  });
 
   // ==============================
-  // Initialize
+  // Show Latest by default
   // ==============================
-  const semesterDropdownEl = semesterDropdown;
-  if (semesterDropdownEl) {
-    showSemester(semesters[0].id);
-    semesterDropdownEl.value = semesters[0].id;
-    semesterDropdownEl.addEventListener('change', e => showSemester(e.target.value));
-  }
+  if (semesters.length > 0) semesterDropdown.value = semesters[0].id;
+  semesterDropdown.dispatchEvent(new Event('change'));
 
 });
